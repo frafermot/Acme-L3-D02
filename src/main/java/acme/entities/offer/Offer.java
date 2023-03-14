@@ -29,27 +29,27 @@ public class Offer extends AbstractEntity {
 
 	@NotNull
 	@PastOrPresent
-	private Date				instantiation;
+	protected Date				instantiation;
 
 	@NotBlank
 	@Length(max = 75)
-	private String				header;
+	protected String			header;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				summary;
+	protected String			summary;
 
 	@NotNull
-	private Date				startDate;
+	protected Date				startDate;
 
 	@NotNull
-	private Date				endDate;
+	protected Date				endDate;
 
 	@NotNull
-	private Money				price;
+	protected Money				price;
 
 	@URL
-	private String				link;
+	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
 
