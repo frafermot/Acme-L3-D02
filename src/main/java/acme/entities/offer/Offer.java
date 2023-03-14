@@ -29,21 +29,21 @@ public class Offer extends AbstractEntity {
 
 	@NotNull
 	@PastOrPresent
-	protected Date				instantiation;
+	protected Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			header;
+	protected String			heading;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			summary;
 
 	@NotNull
-	protected Date				startDate;
+	protected Date				periodStart;
 
 	@NotNull
-	protected Date				endDate;
+	protected Date				periodEnd;
 
 	@NotNull
 	protected Money				price;
