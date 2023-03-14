@@ -25,9 +25,6 @@ import lombok.Setter;
 @Setter
 public class AuditingRecords extends AbstractEntity {
 
-	/**
-	 * 
-	 */
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
