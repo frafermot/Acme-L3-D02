@@ -1,0 +1,10 @@
+key,code,title,courseAbstract,indicator,retailPrice,link,lecturer
+course-01,ABC1234,title1,,abstract1,THEORETICAL,10.0,http://www.example.com,lecturer-01
+course-02,COD2345,title2                                                  75-characters-test,,abstract2,HANDS_ON,10.0,http://www.example.com,lecturer-02
+course-03,COD2345,title3,,abstract3                                                                       100-characters-test,THEORETICAL,10.0,http://www.example.com,lecturer-03
+course-04,COD2345,title4,,abstract4,HANDS_ON,0.0,http://www.example.com,lecturer-04
+course-05,COD2345,title5,,abstract5,THEORETICAL,10.0,http://www.example.com,lecturer-05
+course-06,COD2345,title6,,abstract6,HANDS_ON,10.0,http://www.example.com,lecturer-06
+course-07,COD2345,title7,,abstract7,THEORETICAL,10.0,http://www.example.com,lecturer-07
+course-08,COD2345,title8,,abstract8,HANDS_ON,10.0,http://www.example.com,lecturer-08
+course-09,COD2345,title9,,abstract9,THEORETICAL,10.0,http://www.example.com,lecturer-09
