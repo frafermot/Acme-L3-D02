@@ -1,3 +1,5 @@
 key,enabled,identity,password,username
 user-account-anonymous-01,false,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",HIDDEN-PASSWORD,anonymous
 user-account-administrator-01,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator,administrator
+user-account-assistant-01,true,"UserIdentity{name: 'Assistant1', surname: 'assistant', email: 'assistant1@acme.com'}",assistant1,assistant1
+user-account-assistant-02,true,"UserIdentity{name: 'Assistant2', surname: 'assistant', email: 'assistant2@acme.com'}",assistant2,assistant2
