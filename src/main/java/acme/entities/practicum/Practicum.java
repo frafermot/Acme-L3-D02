@@ -4,10 +4,13 @@ package acme.entities.practicum;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Company;
 import lombok.Getter;
@@ -36,13 +39,16 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
+	protected Double			estimatedTotalTime;
 
-	public Integer estimatedTotalTime() {
-		return null;
-	}
-
-
+	@NotNull
+	@Valid
 	@ManyToOne(optional = false)
-	protected Company company;
+	protected Company			company;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Course			course;
 
 }
