@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -38,7 +37,6 @@ public class Practicum extends AbstractEntity {
 	protected String			goals;
 
 
-	@NotNull
 	public Integer estimatedTotalTime() {
 		return null;
 	}

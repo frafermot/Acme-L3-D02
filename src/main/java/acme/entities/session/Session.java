@@ -4,10 +4,8 @@ package acme.entities.session;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -33,7 +31,7 @@ public class Session extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sessionAbstract;
+	protected String			abstractString;
 
 	@NotNull
 	protected Indication		indication;
@@ -48,10 +46,5 @@ public class Session extends AbstractEntity {
 
 	@URL
 	protected String			link;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Tutorial			tutorial;
 
 }
