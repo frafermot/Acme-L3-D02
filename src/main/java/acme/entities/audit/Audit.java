@@ -4,6 +4,7 @@ package acme.entities.audit;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.course.Course;
 import acme.enums.Mark;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Auditor;
@@ -51,4 +53,9 @@ public class Audit extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected Auditor			auditor;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	protected Course			course;
 }
