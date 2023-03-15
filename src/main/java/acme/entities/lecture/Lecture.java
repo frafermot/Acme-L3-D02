@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.course.Course;
+import acme.enums.Indication;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
