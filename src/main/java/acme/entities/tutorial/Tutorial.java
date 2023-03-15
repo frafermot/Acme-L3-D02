@@ -37,7 +37,7 @@ public class Tutorial extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			tutorialAbstract;
+	protected String			abstractString;
 
 	@NotBlank
 	@Length(max = 100)
@@ -45,7 +45,6 @@ public class Tutorial extends AbstractEntity {
 
 	@Positive
 	protected double			estimatedTime;
-
 
 	@NotNull
 	@Valid
