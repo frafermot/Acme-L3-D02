@@ -38,6 +38,17 @@ public class Tutorial extends AbstractEntity {
 	protected String			goals;
 
 	@Positive
-	protected Integer			estimatedTime;
+	protected double			estimatedTime;
+
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	protected Course			course;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Assistant			assistant;
 
 }
