@@ -1,28 +1,26 @@
 
-package acme.entities.tutorial;
+package acme.entities.enrolment;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.entities.course.Course;
+import acme.entities.workbook.Workbook;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Assistant;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Tutorial extends AbstractEntity {
+public class Enrolment extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
@@ -33,27 +31,22 @@ public class Tutorial extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			title;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			abstractString;
+	protected String			motivation;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			goals;
 
-	@Positive
-	protected double			estimatedTime;
-
 	@NotNull
-	@Valid
+	@Min(0)
+	protected Double			workTime;
+
+	// Relationships
+
 	@OneToOne(optional = false)
-	protected Course			course;
+	protected Student			student;
 
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Assistant			assistant;
+	@OneToOne(optional = false)
+	protected Workbook			workbook;
 
 }
