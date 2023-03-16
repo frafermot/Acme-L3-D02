@@ -444,6 +444,7 @@ Lecture
 --
 + title: String {NotBlank, Length(max = 75)}
 + estimatedTime: int {Positive}
++ lectureAbstract: String {NotBlank, Length(max = 100)}
 + body: String {NotBlank, Length(max = 100)}
 + indicator: Indication
 + published: bool
