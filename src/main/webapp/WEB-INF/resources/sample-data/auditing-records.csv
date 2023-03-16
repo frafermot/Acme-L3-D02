@@ -1,0 +1,7 @@
+key,subject,assessment,period-start,period-end,mark,link,key:audit
+auditing-record-01,dibujo,final,2021/12/20 23:00,2021/12/20 23:30,A,https://www.wizardingworld.com/,audit-01
+auditing-record-02,lengua,final,2022/05/21 17:30,2022/05/21 18:00,C,https://www.wizardingworld.com/,audit-02
+auditing-record-03,religion,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa100,2021/12/20 23:00,2021/12/20 23:30,A,https://www.wizardingworld.com/,audit-01
+auditing-record-04,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa75,final,2022/05/21 17:30,2022/05/21 18:00,C,https://www.wizardingworld.com/,audit-02
+auditing-record-05,b,final,2021/12/20 23:00,2021/12/20 23:30,B,https://www.wizardingworld.com/,audit-01
+auditing-record-06,gimnasia,final,2022/05/21 17:30,2022/05/21 18:00,C,https://www.wizardingworld.com/,audit-02
