@@ -46,7 +46,6 @@ public class Tutorial extends AbstractEntity {
 	@Positive
 	protected double			estimatedTime;
 
-
 	@NotNull
 	@Valid
 	@OneToOne(optional = false)

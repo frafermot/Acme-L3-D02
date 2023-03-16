@@ -1,10 +1,10 @@
-key,title,sessionAbstract,indication,periodStart,periodEnd,link,tutorial
-session-01,title1                                                  75-characters-test,abstract1,THEORETICAL,06/09/2025 10:00,06/10/2025 12:00,http://www.example.com,tutorial-01
-session-02,title2,abstract2                                                                        75-characters-test,HANDS_ON,07/09/2025 10:00,07/10/2025 10:00,http://www.example.com,tutorial-02
-session-03,title3,abstract3,THEORETICAL,08/09/2025 10:00,08/10/2025 10:00,http://www.example.com,tutorial-03
-session-04,title4,abstract4,HANDS_ON,09/09/2025 10:00,09/10/2025 10:00,http://www.example.com,tutorial-04
-session-05,title5,abstract5,THEORETICAL,10/09/2025 10:00,10/10/2025 10:00,http://www.example.com,tutorial-05
-session-06,title6,abstract6,HANDS_ON,11/09/2025 10:00,11/10/2025 10:00,http://www.example.com,tutorial-06
-session-07,title7,abstract7,THEORETICAL,12/09/2025 10:00,12/10/2025 10:00,http://www.example.com,tutorial-07
-session-08,title8,abstract8,HANDS_ON,13/09/2025 10:00,13/10/2025 10:00,http://www.example.com,tutorial-08
-session-09,title9,abstract9,THEORETICAL,14/09/2025 10:00,14/10/2025 10:00,http://www.example.com,tutorial-09
+key,title,sessionAbstract,indication,periodStart,periodEnd,link,key:tutorial
+session-01,title1                                                  75-characters-test,abstract1,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-01
+session-02,title2,abstract2                                                                        75-characters-test,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-02
+session-03,title3,abstract3,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-03
+session-04,title4,abstract4,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-04
+session-05,title5,abstract5,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-05
+session-06,title6,abstract6,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-06
+session-07,title7,abstract7,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-07
+session-08,title8,abstract8,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-08
+session-09,title9,abstract9,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-09

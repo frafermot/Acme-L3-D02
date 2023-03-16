@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.course.Course;
+import acme.enums.Indication;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,8 +36,7 @@ public class Lecture extends AbstractEntity {
 	protected String			lectureAbstract;
 
 	@Positive
-	@NotNull
-	protected Integer			estimatedTime;
+	protected int				estimatedTime;
 
 	@NotBlank
 	@Length(max = 100)
@@ -48,7 +48,7 @@ public class Lecture extends AbstractEntity {
 	@URL
 	protected String			link;
 
-	protected boolean			publicado;
+	protected boolean			published;
 
 	@NotNull
 	@Valid

@@ -8,7 +8,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -25,31 +24,36 @@ import lombok.Setter;
 @Setter
 public class Course extends AbstractEntity {
 
-	@Pattern(regexp = "“[A-Z]{1,3}[0-9]{3}")
+	/**
+	 * 
+	 */
+	private static final long	serialVersionUID	= 1L;
+
+	@Pattern(regexp = "[A-Z]{1,3}[0-9]{3}")
 	@NotBlank
 	@Column(unique = true)
-	protected String		code;
+	protected String			code;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String		title;
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String		courseAbstract;
+	protected String			courseAbstract;
+
+	protected Indication		indicator;
 
 	@NotNull
-	protected Indication	indicator;
-
-	@PositiveOrZero
-	@NotNull
-	protected Money			retailPrice;
+	protected Money				retailPrice;
 
 	@URL
-	protected String		link;
+	protected String			link;
+
+	protected boolean			published;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Lecturer		lecturer;
+	protected Lecturer			lecturer;
 }

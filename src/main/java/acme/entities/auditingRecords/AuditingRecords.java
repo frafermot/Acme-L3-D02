@@ -1,5 +1,5 @@
 
-package acme.entities.session;
+package acme.entities.auditingRecords;
 
 import java.util.Date;
 
@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.tutorial.Tutorial;
-import acme.enums.Indication;
+import acme.entities.audit.Audit;
+import acme.enums.Mark;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,20 +23,17 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Session extends AbstractEntity {
+public class AuditingRecords extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			title;
+	protected String			subject;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			sessionAbstract;
-
-	@NotNull
-	protected Indication		indication;
+	protected String			assessment;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -46,12 +43,13 @@ public class Session extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				periodEnd;
 
+	protected Mark				mark;
+
 	@URL
 	protected String			link;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Tutorial			tutorial;
-
+	protected Audit				audit;
 }

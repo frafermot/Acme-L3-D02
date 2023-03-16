@@ -1,0 +1,5 @@
+key,statement,strong-features,weak-features,link,key:userAccount
+student-01,Biology student with experience in field research and data analysis,Ability to work autonomously,Lack of experience in using certain laboratory equipment,null,user-account-student-01
+student-02,Computer Science student with experience in software development,Advanced programming skills,Lack of experience in mobile app development,https://github.com/frafermot/Acme-L3-D02,user-account-student-02
+student-03,English Literature student with strong writing and analytical skills,Ability to interpret complex texts and formulate articulate arguments,Weak understanding of literary theory and criticism,null,user-account-student-03
+student-04,Finance student with experience in financial modeling and analysis,Strong understanding of accounting principles and financial statement analysis,Needs to improve presentation and communication skills,https://stackoverflow.com/,user-account-student-04

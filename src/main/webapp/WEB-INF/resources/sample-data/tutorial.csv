@@ -1,10 +1,10 @@
-key,code,title,tutorialAbstract,goals,estimatedTime,course,assistant
+key,code,title,tutorialAbstract,goals,estimatedTime,key:course,key:assistant
 tutorial-01,ABC1234,title1,abstract1,goal1,10.0,course-01,assistant-01
 tutorial-02,COD2345,title2                                                  75-characters-test,abstract2,goal2,10.0,course-02,assistant-02
 tutorial-03,COD3456,title3,abstract3                                                                       100-characters-test,goal3,10.0,course-03,assistant-03
-tutorial-04,COD4567,title4,abstract4,goal4                                                                           100-characters-test,10.0,course-04,assistant-04
-tutorial-05,COD5678,title5,abstract5,goal5,10.0,course-05,assistant-05
-tutorial-06,COD6789,title6,abstract6,goal6,10.0,course-06,assistant-06
-tutorial-07,COD7890,title7,abstract7,goal7,10.0,course-07,assistant-07
-tutorial-08,COD8901,title8,abstract8,goal8,10.0,course-08,assistant-08
-tutorial-09,COD9012,title9,abstract9,goal9,10.0,course-09,assistant-09
+tutorial-04,COD4567,title4,abstract4,goal4                                                                           100-characters-test,10.0,course-04,assistant-02
+tutorial-05,COD5678,title5,abstract5,goal5,10.0,course-05,assistant-01
+tutorial-06,COD6789,title6,abstract6,goal6,10.0,course-06,assistant-02
+tutorial-07,COD7890,title7,abstract7,goal7,10.0,course-07,assistant-03
+tutorial-08,COD8901,title8,abstract8,goal8,10.0,course-08,assistant-02
+tutorial-09,COD9012,title9,abstract9,goal9,10.0,course-09,assistant-01
