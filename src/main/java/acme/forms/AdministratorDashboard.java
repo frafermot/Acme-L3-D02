@@ -13,7 +13,7 @@ public class AdministratorDashboard extends AbstractForm {
 	 */
 	private static final long	serialVersionUID	= 1L;
 
-	Map<String, Integer>		totalPrincipalNumberPerRole;
+	Map<String, Integer>		totalPrincipalNumberPerRol;
 
 	Double						peepsWithAddresAndLink;
 	Double						ratioCriticalBulletin;
