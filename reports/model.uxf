@@ -1152,18 +1152,4 @@ customelement=
     <panel_attributes>lt=&lt;..</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;80.0;10.0;80.0</additional_attributes>
   </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1290</x>
-      <y>660</y>
-      <w>405</w>
-      <h>225</h>
-    </coordinates>
-    <panel_attributes>lt=x-&gt;
-m1=0..n
-m2=1
- helps &gt;</panel_attributes>
-    <additional_attributes>680.0;10.0;790.0;10.0;790.0;340.0;10.0;340.0;10.0;430.0</additional_attributes>
-  </element>
 </diagram>
