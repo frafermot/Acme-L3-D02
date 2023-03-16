@@ -1,11 +1,11 @@
-key,title,lecture-abstract,estimated-time,body,indicator,link,published,key:course
-lecture-01,Lecture1,Abstract para Lecture1,1,Body para Lecture1,THEORETICAL,https://github.com/,true,course-01
-lecture-02,Lecture2,Abstract para Lecture2,4,Body para Lecture2,THEORETICAL,https://github.com/,true,course-02
-lecture-03,Lecture3,Abstract para Lecture3,3,Body para Lecture3,HANDS_ON,https://github.com/,true,course-03
-lecture-04,Lecture4,Abstract para Lecture4,2,Body para Lecture4,HANDS_ON,https://github.com/,false,course-04
-lecture-05,Lecture5,Abstract para Lecture5,3,Body para Lecture5,THEORETICAL,https://github.com/,true,course-01
-lecture-06,Lecture6,Abstract para Lecture6,2,Body para Lecture6,THEORETICAL,https://github.com/,true,course-04
-lecture-07,Lecture7,Abstract para Lecture7,4,Body para Lecture7,HANDS_ON,https://github.com/,false,course-02
-lecture-08,Lecture8,Abstract para Lecture8,2,Body para Lecture8,HANDS_ON,https://github.com/,true,course-02
-lecture-09,Lecture9,Abstract para Lecture9,3,Body para Lecture9,HANDS_ON,https://github.com/,true,course-03
-lecture-010,Lecture10,Abstract para Lecture10,1,Body para Lecture10,HANDS_ON,https://github.com/,false,course-02
+key,title,lecture-abstract,estimated-time,body,indicator,link,published
+lecture-01,Lecture1,Abstract para Lecture1,1,Body para Lecture1,THEORETICAL,https://github.com/,true
+lecture-02,Lecture2,Abstract para Lecture2,4,Body para Lecture2,THEORETICAL,https://github.com/,true
+lecture-03,Lecture3,Abstract para Lecture3,3,Body para Lecture3,HANDS_ON,https://github.com/,true
+lecture-04,Lecture4,Abstract para Lecture4,2,Body para Lecture4,HANDS_ON,https://github.com/,false
+lecture-05,Lecture5,Abstract para Lecture5,3,Body para Lecture5,THEORETICAL,https://github.com/,true
+lecture-06,Lecture6,Abstract para Lecture6,2,Body para Lecture6,THEORETICAL,https://github.com/,true
+lecture-07,Lecture7,Abstract para Lecture7,4,Body para Lecture7,HANDS_ON,https://github.com/,false
+lecture-08,Lecture8,Abstract para Lecture8,2,Body para Lecture8,HANDS_ON,https://github.com/,true
+lecture-09,Lecture9,Abstract para Lecture9,3,Body para Lecture9,HANDS_ON,https://github.com/,true
+lecture-10,Lecture10,Abstract para Lecture10,1,Body para Lecture10,HANDS_ON,https://github.com/,false
