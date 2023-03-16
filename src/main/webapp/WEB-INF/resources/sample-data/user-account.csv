@@ -1,0 +1,5 @@
+key,username,password,identity,enabled
+user-account-student-01,student1,student1,"UserIdentity{name: 'Luis', surname: 'Garcia', email: 'student1@mail.com'}",true
+user-account-student-02,student2,student2,"UserIdentity{name: 'Samanta', surname: 'Rodriguez', email: 'student2@mail.com'}",true
+user-account-student-03,student3,student3,"UserIdentity{name: 'Alfredo', surname: 'Lopez', email: 'student3@mail.com'}",true
+user-account-student-04,student4,student4,"UserIdentity{name: 'Manuel', surname: 'Castillo', email: 'student4@mail.com'}",false
