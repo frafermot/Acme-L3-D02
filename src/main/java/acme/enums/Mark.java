@@ -2,5 +2,5 @@
 package acme.enums;
 
 public enum Mark {
-	A_HIGH, A, B, C, F, F_LOW
+	A_high, A, B, C, F, F_low
 }

@@ -1,0 +1,5 @@
+key,code,title,course-abstract,indicator,retail-price,link,published,key:lecturer
+course-01,AB193,Titulo para course1,Abstract para course1,THEORETICAL,EUR 15000.98,https://github.com/,true,lecturer-01
+course-02,AB253,Titulo para course2,Abstract para course2,HANDS_ON,EUR 13000.98,https://github.com/,true,lecturer-02
+course-03,CD001,Titulo para course3,Abstract para course3,HANDS_ON,USD 30.2,https://github.com/,false,lecturer-01
+course-04,EF111,Titulo para course4,Abstract para course4,BALANCED,USD 13.98,https://github.com/,false,lecturer-02
