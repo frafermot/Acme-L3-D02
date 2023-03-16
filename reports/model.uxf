@@ -333,7 +333,7 @@ Practicum
 + title: String {NotBlank, Length(max = 75)}
 + practicumAbstract: String {NotBlank, Length(max = 100)}
 + goals: String {NotBlank, Length(max = 100)}
-+ /estimatedTotalTime: Integer {NotNull}
++ /estimatedTotalTime: int
 bg=CYAN</panel_attributes>
     <additional_attributes/>
   </element>
@@ -389,7 +389,7 @@ Audit
 + conclusion: String {NotBlank, Length(max = 100)}
 + strongPoints: String {NotBlank, Length(max = 100)}
 + weakPoints: String {NotBlank, Length(max = 100)}
-+ mark: Mark {NotNull} 
++ mark: Mark
 bg=CYAN</panel_attributes>
     <additional_attributes/>
   </element>
@@ -408,7 +408,7 @@ AuditingRecords
 + assesment: String {NotBlank, Length(max = 100)}
 + periodStart: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
 + periodEnd: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
-+ mark: Mark {NotNull}
++ mark: Mark
 + link: String {URL}
 bg=CYAN</panel_attributes>
     <additional_attributes/>
@@ -445,7 +445,7 @@ Lecture
 + title: String {NotBlank, Length(max = 75)}
 + estimatedTime: int {Positive}
 + body: String {NotBlank, Length(max = 100)}
-+ indication: Indicator {NotNull}
++ indicator: Indication
 + published: bool
 + link: String {URL}
 bg=CYAN</panel_attributes>
@@ -511,8 +511,8 @@ Course
 + code: String {NotBlank, Unique, Pattern}
 + title: String {NotBlank, Length(max = 75)}
 + courseAbstract: String {NotBlank, Length(max = 100)}
-+ indication: Indicator {NotNull}
-+ retailPrice: Double {NotNull, Positive}
++ indicator: Indication 
++ retailPrice: Money {NotNull}
 + published: bool
 + link: String {URL}
 bg=CYAN</panel_attributes>
@@ -545,7 +545,7 @@ bg=PINK</panel_attributes>
       <h>50</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
-Indicator
+Indication
 --
 + THEORICAL
 + HANDS-ON
@@ -616,7 +616,7 @@ Session
 --
 + title: String {NotBlank, Length(max = 75)}
 + sessionAbstract: String {NotBlank, Length(max = 100)}
-+ indication: Indicator {NotNull}
++ indicator: Indication
 + periodStart: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
 + periodEnd: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
 + link: String {URL}
@@ -738,7 +738,7 @@ Workbook
 --
 + title: String {NotBlank, Length(max = 75)}
 + workbookAbstract: String {NotBlank, Length(max = 100)}
-+ indication: Indicator
++ indicator: Indication
 + periodStart: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
 + periodEnd: Date {NotNull, Temporal(TemporalType.TIMESTAMP)
 + link: String {URL}
