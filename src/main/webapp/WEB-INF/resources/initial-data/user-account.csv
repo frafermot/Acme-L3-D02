@@ -10,6 +10,10 @@ user-account-company-01,true,"UserIdentity{name: 'Company1', surname: 'Acme', em
 user-account-company-02,true,"UserIdentity{name: 'Company2', surname: 'Acme', email: 'company2@acme.com'}",company2,company2
 user-account-lecturer-01,true,"UserIdentity{name: 'Lecturer1', surname: 'Acme', email: 'lecturer1@acme.com'}",lecturer1,lecturer1
 user-account-lecturer-02,true,"UserIdentity{name: 'Lecturer2', surname: 'Acme', email: 'lecturer2@acme.com'}",lecturer2,lecturer2
+user-account-lecturer-03,false,"UserIdentity{name: 'Lecturer3', surname: 'Acme', email: 'lecturer3@acme.com'}",lecturer3,lecturer3
+user-account-lecturer-04,true,"UserIdentity{name: 'Lecturer4', surname: 'Acme', email: 'lecturer4@acme.com'}",lecturer4,lecturer4
+user-account-lecturer-05,true,"UserIdentity{name: 'Lecturer5', surname: 'Acme', email: 'lecturer5@acme.com'}",lecturer5,lecturer5
+user-account-lecturer-06,false,"UserIdentity{name: 'Lecturer6', surname: 'Acme', email: 'lecturer6@acme.com'}",lecturer6,lecturer6
 user-account-student-01,true,"UserIdentity{name: 'Luis', surname: 'Garcia', email: 'student1@mail.com'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'Samanta', surname: 'Rodriguez', email: 'student2@mail.com'}",student2,student2
 user-account-student-03,true,"UserIdentity{name: 'Alfredo', surname: 'Lopez', email: 'alfredo22@mail.com'}",alfredo22,alfredo1234
