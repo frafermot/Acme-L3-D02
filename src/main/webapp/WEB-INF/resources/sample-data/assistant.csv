@@ -1,4 +1,4 @@
 key,key:userAccount,supervisor,expertiseFields,resume,link
-assistant-01,user-account-assistant-01,supervisor1                                            75-characters-test,321,resume1,http://www.example.com
+assistant-01,user-account-assistant-01,supervisor1                                            75-characters-test,321,resume1,
 assistant-02,user-account-assistant-02,s,expertise2                                                                      100-characters-test,resume2,http://www.example.com
-assistant-03,user-account-assistant-03,0123,e,resume3                                                                         100-characters-test,http://www.example.com
+assistant-03,user-account-assistant-03,0123,e,resume3                                                                         100-characters-test,https://www.example.com
