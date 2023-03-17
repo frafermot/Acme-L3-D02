@@ -333,7 +333,7 @@ Practicum
 + title: String {NotBlank, Length(max = 75)}
 + practicumAbstract: String {NotBlank, Length(max = 100)}
 + goals: String {NotBlank, Length(max = 100)}
-+ /estimatedTotalTime: int
++ /estimatedTotalTime: double
 bg=CYAN</panel_attributes>
     <additional_attributes/>
   </element>
@@ -437,7 +437,7 @@ bg=PINK</panel_attributes>
       <x>1410</x>
       <y>875</y>
       <w>165</w>
-      <h>75</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Lecture
@@ -458,20 +458,14 @@ bg=CYAN</panel_attributes>
       <x>1410</x>
       <y>710</y>
       <w>165</w>
-      <h>100</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AuditorDashboard
 --
 + numberAudits: Map&lt;Integer,Indicator&gt;
-+ average: Double
-+ deviationRecord: Double
-+ minRecord: Double
-+ maxRecord: Double
-+ averageTime: Double
-+ desviationTime: Double
-+ minRecordTime: Double
-+ maxRecordTime: Double
++ auditStatistics: Statistics
++ auditingRecordStatistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -481,20 +475,14 @@ bg=ORANGE</panel_attributes>
       <x>1410</x>
       <y>960</y>
       <w>165</w>
-      <h>110</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 LecturerDashboard
 --
 + numberOfLectureIndication: Map&lt;Indicator,Integer&gt;
-+ averageLecture: Double
-+ deviationLecture: Double
-+ minLecture: Integer
-+ maxLecture: Integer
-+ averageCourse: Double
-+ desviationCourse: Double
-+ minCourse: Integer
-+ maxCourse: Integer
++ lectureStatistics: Statistics
++ courseStatistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -634,7 +622,7 @@ bg=CYAN</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
-m2=n..0
+m2=0..n
  does &gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
@@ -658,21 +646,15 @@ m2=0..n
       <x>0</x>
       <y>965</y>
       <w>165</w>
-      <h>105</h>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AssistantDashboard
 --
 + numberOfTutorialTheorical: Integer
 + numberOfTutorialHandsOn: Integer
-+ averageSession: Double
-+ deviationSession: Double
-+ minSession: Double
-+ maxSession: Double
-+ averageTutorial: Double 
-+ desviationTutorial: Double
-+ minTutorial: Double
-+ maxTutorial: Double
++ sessionStatistics: Statistics
++ tutorialStatistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -735,7 +717,7 @@ bg=CYAN</panel_attributes>
       <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Workbook
+Activity
 --
 + title: String {NotBlank, Length(max = 75)}
 + workbookAbstract: String {NotBlank, Length(max = 100)}
@@ -752,21 +734,15 @@ bg=CYAN</panel_attributes>
       <x>10</x>
       <y>480</y>
       <w>165</w>
-      <h>105</h>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 StudentDashboard
 --
 + numberOfTheoryTheorical: Integer
 + numberOfTheoryHandsOn: Integer
-+ averageWorkbook: Double
-+ deviationWorkbook: Double
-+ minWorkbook: Double
-+ maxWorkbook: Double
-+ averageTimeEnrolled: Double
-+ desviationTimeEnrolled: Double
-+ minTimeEnrolled: Double
-+ maxTimeEnrolled: Double
++ activityStatistics: Statistics
++ enrolmentStatistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -779,7 +755,7 @@ bg=ORANGE</panel_attributes>
       <h>25</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
-m1=1
+m1=0..n
 m2=1
  registrates &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
@@ -792,8 +768,8 @@ m2=1
       <w>90</w>
       <h>25</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
+    <panel_attributes>lt=x-&gt;
+m1=0..n
 m2=1
 &lt; has </panel_attributes>
     <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
@@ -804,21 +780,15 @@ m2=1
       <x>1635</x>
       <y>480</y>
       <w>165</w>
-      <h>105</h>
+      <h>75</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 CompanyDashboard
 --
 + numberOfPracticaTheorical: Map&lt;Month,Integer&gt; 
 + numberOfPracticaHandsOn: Map&lt;Month,Integer&gt; 
-+ averageLengthSession: Double
-+ deviationSession: Double
-+ minSession: Double
-+ maxSession: Double
-+ averagePractica: Double
-+ desviationPractica: Double
-+ minPractica: Double
-+ maxPractica: Double
++ sessionStatistics: Statistics
++ practicaStatistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -912,7 +882,7 @@ m2=0..n
       <x>1210</x>
       <y>95</y>
       <w>210</w>
-      <h>170</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AdministratorDashboard
@@ -925,10 +895,7 @@ AdministratorDashboard
 + minimumBudgetByCurrency: Map&lt;currency, Integer&gt;
 + maximumBudgetByCurrency: Map&lt;currency, Integer&gt;
 + standartDeviationBudgetByCurrency: Map&lt;currency, Double&gt;
-+ averageNotesPostedLast10Weeks: Double
-+ minimumNotesPostedLast10Weeks: Integer
-+ maximumNotesPostedLast10Weeks: Integer
-+ StandartDeviationNotesPostedLast10Weeks: Double
++ statistics: Statistics
 bg=ORANGE</panel_attributes>
     <additional_attributes/>
   </element>
@@ -1151,5 +1118,59 @@ customelement=
     </coordinates>
     <panel_attributes>lt=&lt;..</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1210</x>
+      <y>1085</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Money type has currency and
+amount, amount needs to be
+positive, it will be checked on
+service
+customelement=
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1305</x>
+      <y>955</y>
+      <w>55</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;90.0;120.0;90.0;300.0;30.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1225</x>
+      <y>300</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Money type has currency and
+amount, amount needs to be
+positive, it will be checked on
+service
+customelement=
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>260</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;380.0;40.0;380.0;80.0</additional_attributes>
   </element>
 </diagram>
