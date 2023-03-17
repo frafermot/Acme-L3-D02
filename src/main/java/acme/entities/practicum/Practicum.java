@@ -41,7 +41,7 @@ public class Practicum extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
-	protected Double			estimatedTotalTime;
+	protected double			estimatedTotalTime;
 
 	@NotNull
 	@Valid
