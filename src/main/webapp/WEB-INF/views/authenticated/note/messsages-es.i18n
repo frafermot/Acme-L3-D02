@@ -1,5 +1,13 @@
 authenticated.note.list.label.title = Título
 authenticated.note.list.label.instantiationMoment = Momento
 authenticated.note.list.label.author = Autor
-authenticated.note.list.label.link = Link
-authenticated.note.list.label.message = Mensaje
+
+authenticated.note.form.label.title = Título
+authenticated.note.form.label.instantiationMoment = Momento
+authenticated.note.form.label.message = Mensaje
+authenticated.note.form.label.link = Link
+authenticated.note.form.label.emailAddress = Dirección de correo
+authenticated.note.form.label.author = Autor
+authenticated.note.form.label.confirmation = Confirmación
+
+authenticated.note.form.button.create = Crear

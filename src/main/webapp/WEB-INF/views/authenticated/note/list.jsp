@@ -8,3 +8,5 @@
 	<acme:list-column code="authenticated.note.list.label.author" path="author" width="35%"/>
 	<acme:list-column code="authenticated.note.list.label.instantiationMoment" path="instantiationMoment" width="15%"/>
 </acme:list>
+
+<acme:button code="authenticated.note.form.button.create" action="/authenticated/note/create"/>

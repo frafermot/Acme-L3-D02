@@ -65,7 +65,8 @@ public class AuthenticatedNoteShowService extends AbstractService<Authenticated,
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "author");
+		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "author", "emailAddress");
+		tuple.put("readOnly", false);
 
 		super.getResponse().setData(tuple);
 	}
