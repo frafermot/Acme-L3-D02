@@ -1,0 +1,5 @@
+authenticated.note.list.label.title = Título
+authenticated.note.list.label.instantiationMoment = Momento
+authenticated.note.list.label.author = Autor
+authenticated.note.list.label.link = Link
+authenticated.note.list.label.message = Mensaje
