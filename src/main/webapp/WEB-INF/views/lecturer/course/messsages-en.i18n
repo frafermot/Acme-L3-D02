@@ -1,0 +1,10 @@
+lecturer.course.list.label.code = Code
+lecturer.course.list.label.title = Title
+lecturer.course.list.label.courseAbstract = Course Abstract
+
+lecturer.course.form.label.code = Code
+lecturer.course.form.label.title = Title
+lecturer.course.form.label.courseAbstract = Course Abstract
+lecturer.course.form.label.indicator = Type
+lecturer.course.form.label.retailPrice = Retail Price
+lecturer.course.form.label.link = Link

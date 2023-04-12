@@ -1,0 +1,6 @@
+authenticated.lecturer.form.label.almaMater = Universidad
+authenticated.lecturer.form.label.resume = Resumen
+authenticated.lecturer.form.label.qualifications = Cualificaciones
+authenticated.lecturer.form.label.link = Link
+
+authenticated.lecturer.form.button.create = Crear
