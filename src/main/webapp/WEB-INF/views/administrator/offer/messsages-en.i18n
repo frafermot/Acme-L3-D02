@@ -1,0 +1,19 @@
+#list.jsp
+administrator.offer.list.label.heading = Heading
+administrator.offer.list.label.price = Price
+administrator.offer.list.label.instantiationMoment = Creation date
+
+administrator.offer.form.button.create = Create offer
+
+#form.jsp
+administrator.offer.form.label.instantiationMoment = Creation date
+administrator.offer.form.label.heading = Heading
+administrator.offer.form.label.summary = Summary
+administrator.offer.form.label.price = Price
+administrator.offer.form.label.link = Link
+administrator.offer.form.label.periodStart = Start of offer
+administrator.offer.form.label.periodEnd = End of offer
+
+administrator.offer.form.button.update = Update
+administrator.offer.form.button.delete = Delete
+administrator.offer.form.button.create = Create

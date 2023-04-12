@@ -29,6 +29,7 @@ master.menu.anonymous.favourite-linkAlejandro = 48993614A: Sánchez Mayorga, Ale
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.note.list = Listar Notas
+master.menu.authenticated.offer.list = Ver ofertas
 
 # master.menu.administrator ###################################################
 
@@ -38,6 +39,7 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.offer.list = Ver ofertas
 
 # master.menu.provider ########################################################
 
