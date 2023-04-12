@@ -1,0 +1,16 @@
+authenticated.offer.list.label.heading = Encabezamiento
+authenticated.offer.list.label.price = Precio
+authenticated.offer.list.label.instantiationMoment = Momento
+
+
+authenticated.offer.form.label.instantiationMoment = Momento
+authenticated.offer.form.label.heading = Encabezamiento
+authenticated.offer.form.label.summary = Resumen
+authenticated.offer.form.label.price = Precio
+authenticated.offer.form.label.link = Enlace
+authenticated.offer.form.label.periodStart = Comienzo
+authenticated.offer.form.label.periodEnd = Fin
+authenticated.offer.form.label.confirmation = Confirmación
+
+
+authenticated.offer.form.button.create = Crear
