@@ -29,6 +29,12 @@ master.menu.anonymous.favourite-linkAlejandro = 48993614A: Sánchez Mayorga, Ale
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.note.list = Listar Notas
+master.menu.authenticated.tutorial.list-all = Listar Tutoriales
+
+# master.menu.assistant ###################################################
+
+master.menu.assistant = Asistente
+master.menu.assistant.tutorial.list-mine = Listar mis Tutoriales
 
 # master.menu.administrator ###################################################
 
