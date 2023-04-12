@@ -1,6 +1,7 @@
 
 package acme.features.administrator.offer;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,14 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 	@Override
 	public void validate(final Offer object) {
 		assert object != null;
+
+		Date minStart;
+		minStart = MomentHelper.deltaFromMoment(object.getInstantiationMoment(), 1, ChronoUnit.DAYS);
+		assert MomentHelper.isAfterOrEqual(object.getPeriodStart(), minStart);
+
+		Date minEnd;
+		minEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 7, ChronoUnit.DAYS);
+		assert MomentHelper.isAfterOrEqual(object.getPeriodEnd(), minEnd);
 
 	}
 
