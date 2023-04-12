@@ -5,8 +5,6 @@
 
 <acme:list>
 	<acme:list-column code="authenticated.offer.list.label.heading" path="heading" width="50%"/>
-	<acme:list-column code="authenticated.offer.list.label.price" path="price" width="35%"/>
-	<acme:list-column code="authenticated.offer.list.label.instantiationMoment" path="instantiationMoment" width="15%"/>
+	<acme:list-column code="authenticated.offer.list.label.price" path="price" width="30%"/>
+	<acme:list-column code="authenticated.offer.list.label.instantiationMoment" path="instantiationMoment" width="20%"/>
 </acme:list>
-
-<acme:button code="authenticated.offer.form.button.create" action="/authenticated/offer/create"/>

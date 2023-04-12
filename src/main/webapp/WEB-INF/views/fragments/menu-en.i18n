@@ -29,6 +29,7 @@ master.menu.anonymous.favourite-linkAlejandro = 48993614A: Sánchez Mayorga, Ale
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.note.list = List Notes
+master.menu.authenticated.offer.list = List offers
 
 # master.menu.administrator ###################################################
 
