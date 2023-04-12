@@ -1,10 +1,10 @@
-key,code,title,course-abstract,indicator,retail-price,link,published
-course-01,AB193,"75caracteres Titulo para course1asdasdfafasdf&%$·begbl askdjcnh()[asdf""]{75",1,THEORETICAL,EUR 15000.98,http://github.com/,true
-course-02,AB253,()/=*-+$%&[]{},Abstract para course2,HANDS_ON,EUR 13000.98,https://github.com/,true
-course-03,CD001,a,()/=*-+$%&[]{},HANDS_ON,USD 30.2,,false
-course-04,EF111,Titulo para course4,"100caracteres abstract para course4 asdañññafaasdfasdfasdssdfdf&%$·begbl askadsfdjcnh()[sdf""asd]{100",BALANCED,USD 13.98,https://github.com/,false
-course-05,A001,as,Abstract para course5,THEORETICAL,USD 13.98,ftp://ftp.mozilla.org/,false
-course-06,B002,Titulo para course6afsdvfascdcasdcfas,a,THEORETICAL,USD 00.00,,false
-course-07,AB001,Titulo para course7,Abstract para course7,THEORETICAL,EUR 13000.98,ftp://ftp.mozilla.org/,false
-course-08,CF185,1,Abstract para course8,THEORETICAL,EUR 13000.98,http://github.com/,false
-course-09,V777,Titulo,Abstract para course8,THEORETICAL,EUR 13000.98,,false
+key,code,title,course-abstract,indicator,retail-price,link,published,key:lecturer
+course-01,AB193,"75caracteres Titulo para course1asdasdfafasdf&%$·begbl askdjcnh()[asdf""]{75",1,THEORETICAL,EUR 15000.98,http://github.com/,true,lecturer-01
+course-02,AB253,()/=*-+$%&[]{},Abstract para course2,HANDS_ON,EUR 13000.98,https://github.com/,true,lecturer-02
+course-03,CD001,a,()/=*-+$%&[]{},HANDS_ON,USD 30.2,,false,lecturer-03
+course-04,EF111,Titulo para course4,"100caracteres abstract para course4 asdañññafaasdfasdfasdssdfdf&%$·begbl askadsfdjcnh()[sdf""asd]{100",BALANCED,USD 13.98,https://github.com/,false,lecturer-03
+course-05,A001,as,Abstract para course5,THEORETICAL,USD 13.98,ftp://ftp.mozilla.org/,false,lecturer-04
+course-06,B002,Titulo para course6afsdvfascdcasdcfas,a,THEORETICAL,USD 00.00,,false,lecturer-05
+course-07,AB001,Titulo para course7,Abstract para course7,THEORETICAL,EUR 13000.98,ftp://ftp.mozilla.org/,false,lecturer-01
+course-08,CF185,1,Abstract para course8,THEORETICAL,EUR 13000.98,http://github.com/,false,lecturer-02
+course-09,V777,Titulo,Abstract para course8,THEORETICAL,EUR 13000.98,,false,lecturer-06
