@@ -50,11 +50,6 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void validate(final Peep object) {
 		assert object != null;
-
-		boolean confirmation;
-
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
 	}
 
 	@Override
@@ -71,7 +66,6 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "email", "nick");
-		tuple.put("confirmation", false);
 		tuple.put("readOnly", false);
 
 		super.getResponse().setData(tuple);
