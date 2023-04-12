@@ -1,8 +1,9 @@
+#list.jsp
 authenticated.offer.list.label.heading = Encabezamiento
 authenticated.offer.list.label.price = Precio
 authenticated.offer.list.label.instantiationMoment = Fecha de creación
 
-
+#form.jsp
 authenticated.offer.form.label.instantiationMoment = Fecha de creación
 authenticated.offer.form.label.heading = Encabezamiento
 authenticated.offer.form.label.summary = Descripción
