@@ -10,4 +10,5 @@
 	<acme:input-url code="authenticated.lecturer.form.label.link" path="link"/>
 	
 	<acme:submit test="${_command == 'create'}" code="authenticated.lecturer.form.button.create" action="/authenticated/lecturer/create"/>
+	<acme:submit test="${_command == 'update'}" code="authenticated.lecturer.form.button.update" action="/authenticated/lecturer/update"/>
 </acme:form>

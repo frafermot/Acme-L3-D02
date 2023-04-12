@@ -16,7 +16,10 @@ public class AuthenticatedLecturerController extends AbstractController<Authenti
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedLecturerCreateService createService;
+	protected AuthenticatedLecturerCreateService	createService;
+
+	@Autowired
+	protected AuthenticatedLecturerUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -24,5 +27,6 @@ public class AuthenticatedLecturerController extends AbstractController<Authenti
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 	}
 }
