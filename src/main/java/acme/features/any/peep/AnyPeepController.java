@@ -1,25 +1,26 @@
 
-package acme.entities.peep;
+package acme.features.any.peep;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import acme.entities.peep.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-public class PeepController extends AbstractController<Any, Peep> {
+public class AnyPeepController extends AbstractController<Any, Peep> {
 
 	@Autowired
-	protected PeepListService	listService;
+	protected AnyPeepListService	listService;
 
 	@Autowired
-	protected PeepShowService	showService;
+	protected AnyPeepShowService	showService;
 
 	@Autowired
-	protected PeepCreateService	createService;
+	protected AnyPeepCreateService	createService;
 
 
 	@PostConstruct

@@ -1,16 +1,19 @@
 
-package acme.entities.peep;
+package acme.features.any.peep;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import acme.entities.peep.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
-public class PeepShowService extends AbstractService<Any, Peep> {
+@Service
+public class AnyPeepShowService extends AbstractService<Any, Peep> {
 
 	@Autowired
-	protected PeepRepository repository;
+	protected AnyPeepRepository repository;
 
 
 	@Override
