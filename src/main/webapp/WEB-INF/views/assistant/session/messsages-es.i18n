@@ -1,0 +1,17 @@
+assistant.session.list.label.title = Título
+assistant.session.list.label.indication = Tipo
+assistant.session.list.label.periodStart = Inicio
+assistant.session.list.label.periodEnd = Fin
+assistant.session.list.button.create = Crear
+
+assistant.session.form.label.title = Título:
+assistant.session.form.label.tutorial = Tutorial:
+assistant.session.form.label.sessionAbstract = Resumen:
+assistant.session.form.label.indication = Tipo:
+assistant.session.form.label.periodStart = Inicio:
+assistant.session.form.label.periodEnd = Fin:
+assistant.session.form.label.link = Enlace:
+assistant.session.form.button.create = Crear
+assistant.session.form.button.update = Actualizar
+assistant.session.form.button.delete = Eliminar
+assistant.session.form.button.publish = Publicar

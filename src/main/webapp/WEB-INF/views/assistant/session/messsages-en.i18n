@@ -1,0 +1,17 @@
+assistant.session.list.label.title = Title
+assistant.session.list.label.indication = Indication
+assistant.session.list.label.periodStart = Period Start
+assistant.session.list.label.periodEnd = Period End
+assistant.session.list.button.create = Create
+
+assistant.session.form.label.title = Title:
+assistant.session.form.label.tutorial = Tutorial:
+assistant.session.form.label.sessionAbstract = Abstract:
+assistant.session.form.label.indication = Indication:
+assistant.session.form.label.periodStart = Period Start:
+assistant.session.form.label.periodEnd = Period End:
+assistant.session.form.label.link = Link:
+assistant.session.form.button.create = Create
+assistant.session.form.button.update = Update
+assistant.session.form.button.delete = Delete
+assistant.session.form.button.publish = Publish

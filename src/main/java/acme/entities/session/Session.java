@@ -54,4 +54,6 @@ public class Session extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Tutorial			tutorial;
 
+	protected boolean			published;
+
 }

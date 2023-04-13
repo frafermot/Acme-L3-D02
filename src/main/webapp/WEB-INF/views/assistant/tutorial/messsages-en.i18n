@@ -1,0 +1,21 @@
+assistant.tutorial.list.label.code = Code
+assistant.tutorial.list.label.title = Title
+assistant.tutorial.list.label.estimatedTime = Estimated Time
+assistant.tutorial.list.label.published = Published
+assistant.tutorial.list.button.create = Create
+
+assistant.tutorial.form.label.tutorialAbstract = Abstract:
+assistant.tutorial.form.label.goals = Goals:
+assistant.tutorial.form.label.assistant = Assistant:
+assistant.tutorial.form.label.course = Course:
+assistant.tutorial.form.label.code = Code:
+assistant.tutorial.form.label.title = Title:
+assistant.tutorial.form.label.estimatedTime = Estimated Time:
+
+assistant.tutorial.form.label.confirmation = Confirmation
+assistant.tutorial.form.button.create = Create
+assistant.tutorial.form.button.tutorial = Tutorial List
+assistant.tutorial.form.button.update = Update
+assistant.tutorial.form.button.delete = Delete
+assistant.tutorial.form.button.publish = Publish
+assistant.tutorial.form.button.session = Sessions

@@ -1,10 +1,10 @@
-key,code,title,tutorialAbstract,goals,estimatedTime,key:course,key:assistant
-tutorial-01,ABC1234,title1,a,g1,1,course-01,assistant-01
-tutorial-02,COD2345,title2                                                  75-characters-test,abstract2,goal2,83,course-02,assistant-02
-tutorial-03,COD3456,t3,abstract3                                                                       100-characters-test,goal3,7,course-03,assistant-03
-tutorial-04,Z0567,title4,abstract4,goal4                                                                           100-characters-test,155,course-04,assistant-02
-tutorial-05,COD5678,t,abstract5,g,1000,course-05,assistant-01
-tutorial-06,CO0789,6543,abstract6,6,990,course-06,assistant-02
-tutorial-07,C6780,title7,7a,goal7,2,course-07,assistant-03
-tutorial-08,Z2089,8,abstract8,goal8,10,course-08,assistant-02
-tutorial-09,A9012,title9,9,goal9,10,course-09,assistant-01
+key,code,title,tutorialAbstract,goals,estimatedTime,key:course,key:assistant,published
+tutorial-01,ABC1234,title1,a,g1,1,course-01,assistant-01,true
+tutorial-02,COD2345,title2                                                  75-characters-test,abstract2,goal2,83,course-02,assistant-02,true
+tutorial-03,COD3456,t3,abstract3                                                                       100-characters-test,goal3,7,course-03,assistant-03,true
+tutorial-04,Z0567,title4,abstract4,goal4                                                                           100-characters-test,155,course-04,assistant-02,true
+tutorial-05,COD5678,t,abstract5,g,1000,course-05,assistant-01,true
+tutorial-06,CO0789,6543,abstract6,6,990,course-06,assistant-02,true
+tutorial-07,C6780,title7,7a,goal7,2,course-07,assistant-03,true
+tutorial-08,Z2089,8,abstract8,goal8,10,course-08,assistant-02,true
+tutorial-09,A9012,title9,9,goal9,10,course-09,assistant-01,true
