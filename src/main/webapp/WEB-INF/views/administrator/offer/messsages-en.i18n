@@ -17,3 +17,6 @@ administrator.offer.form.label.periodEnd = End of offer
 administrator.offer.form.button.update = Update
 administrator.offer.form.button.delete = Delete
 administrator.offer.form.button.create = Create
+
+administrator.offer.form.error.periodstart = The offer must start at least one day after it is added
+administrator.offer.form.error.periodend = The offer must last at least one week

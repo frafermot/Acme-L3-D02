@@ -60,13 +60,20 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 	public void validate(final Offer object) {
 		assert object != null;
 
-		Date minStart;
-		minStart = MomentHelper.deltaFromMoment(object.getInstantiationMoment(), 1, ChronoUnit.DAYS);
-		assert MomentHelper.isAfterOrEqual(object.getPeriodStart(), minStart);
+		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
+			Date minStart;
 
-		Date minEnd;
-		minEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 7, ChronoUnit.DAYS);
-		assert MomentHelper.isAfterOrEqual(object.getPeriodEnd(), minEnd);
+			minStart = MomentHelper.deltaFromMoment(object.getInstantiationMoment(), 1, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfterOrEqual(object.getPeriodStart(), minStart), "periodStart", "administrator.offer.form.error.periodstart");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
+			Date minEnd;
+
+			minEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 7, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfterOrEqual(object.getPeriodEnd(), minEnd), "periodEnd", "administrator.offer.form.error.periodend");
+		}
+
 	}
 
 	@Override
