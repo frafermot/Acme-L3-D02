@@ -48,7 +48,7 @@ public class AnyPeepShowService extends AbstractService<Any, Peep> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "nick", "email");
-		tuple.put("readOnly", false);
+		tuple.put("readOnly", true);
 
 		super.getResponse().setData(tuple);
 	}
