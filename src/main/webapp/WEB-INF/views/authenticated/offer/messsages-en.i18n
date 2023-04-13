@@ -1,0 +1,13 @@
+#list.jsp
+authenticated.offer.list.label.heading = Heading
+authenticated.offer.list.label.price = Price
+authenticated.offer.list.label.instantiationMoment = Creation date
+
+#form.jsp
+authenticated.offer.form.label.instantiationMoment = Creation date
+authenticated.offer.form.label.heading = Heading
+authenticated.offer.form.label.summary = Summary
+authenticated.offer.form.label.price = Price
+authenticated.offer.form.label.link = Link
+authenticated.offer.form.label.periodStart = Start of offer
+authenticated.offer.form.label.periodEnd = End of offer
