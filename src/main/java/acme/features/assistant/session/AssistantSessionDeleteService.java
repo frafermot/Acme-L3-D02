@@ -10,16 +10,13 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.assistant.tutorial;
-
-import java.util.Collection;
+package acme.features.assistant.session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
 import acme.entities.session.Session;
-import acme.entities.tutorial.Tutorial;
+import acme.enums.Indication;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -27,16 +24,16 @@ import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialDeleteService extends AbstractService<Assistant, Tutorial> {
+public class AssistantSessionDeleteService extends AbstractService<Assistant, Session> {
 
 	public static final String[]			ATTRIBUTES	= {
-		"title", "code", "tutorialAbstract", "goals", "estimatedTime", "published"
+		"title", "sessionAbstract", "indication", "periodStart", "periodEnd", "link", "published"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AssistantTutorialRepository	repository;
+	protected AssistantSessionRepository	repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -52,76 +49,61 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 
 	@Override
 	public void authorise() {
-		boolean status;
+		final boolean status;
 		int id;
-		Tutorial tutorial;
-		Collection<Tutorial> myTutorials;
+		Session session;
 		Principal principal;
 
 		id = super.getRequest().getData("id", int.class);
-		tutorial = this.repository.findTutorialById(id);
 		principal = super.getRequest().getPrincipal();
-		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
-		status = tutorial != null && !tutorial.isPublished() && principal.hasRole(Assistant.class) && myTutorials.contains(tutorial);
+		session = this.repository.findSessionById(id);
+		status = session != null && !session.isPublished() && principal.hasRole(Assistant.class);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Tutorial object;
+		Session object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findTutorialById(id);
+		object = this.repository.findSessionById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void bind(final Tutorial object) {
+	public void bind(final Session object) {
 		assert object != null;
 
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
-
-		super.bind(object, AssistantTutorialDeleteService.ATTRIBUTES);
-		object.setCourse(course);
+		super.bind(object, AssistantSessionDeleteService.ATTRIBUTES);
 	}
 
 	@Override
-	public void validate(final Tutorial object) {
+	public void validate(final Session object) {
 		assert object != null;
 	}
 
 	@Override
-	public void perform(final Tutorial object) {
+	public void perform(final Session object) {
 		assert object != null;
 
-		final Collection<Session> sessions;
-
-		sessions = this.repository.findSessionsByTutorialId(object.getId());
-		this.repository.deleteAll(sessions);
 		this.repository.delete(object);
 	}
 
 	@Override
-	public void unbind(final Tutorial object) {
+	public void unbind(final Session object) {
 		assert object != null;
 
-		Collection<Course> courses;
 		SelectChoices choices;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(Indication.class, object.getIndication());
 
-		tuple = super.unbind(object, AssistantTutorialDeleteService.ATTRIBUTES);
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
+		tuple = super.unbind(object, AssistantSessionDeleteService.ATTRIBUTES);
+		tuple.put("tutorial", object.getTutorial().getTitle());
+		tuple.put("indications", choices);
 
 		super.getResponse().setData(tuple);
 	}

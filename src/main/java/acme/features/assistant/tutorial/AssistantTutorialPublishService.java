@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.tutorial.Tutorial;
+import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
@@ -55,12 +56,14 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		boolean status;
 		int id;
 		Tutorial tutorial;
-		Assistant assistant;
+		Collection<Tutorial> myTutorials;
+		Principal principal;
 
 		id = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findTutorialById(id);
-		assistant = tutorial == null ? null : tutorial.getAssistant();
-		status = tutorial != null && !tutorial.isPublished() && super.getRequest().getPrincipal().hasRole(assistant);
+		principal = super.getRequest().getPrincipal();
+		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
+		status = tutorial != null && !tutorial.isPublished() && principal.hasRole(Assistant.class) && myTutorials.contains(tutorial);
 
 		super.getResponse().setAuthorised(status);
 	}

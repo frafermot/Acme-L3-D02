@@ -18,3 +18,4 @@ assistant.tutorial.form.button.tutorial = Tutorial List
 assistant.tutorial.form.button.update = Update
 assistant.tutorial.form.button.delete = Delete
 assistant.tutorial.form.button.publish = Publish
+assistant.tutorial.form.button.session = Sessions
