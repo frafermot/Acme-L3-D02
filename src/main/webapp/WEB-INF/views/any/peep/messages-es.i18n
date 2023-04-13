@@ -1,0 +1,13 @@
+any.peep.list.label.title = Título
+any.peep.list.label.instantiationMoment = Momento
+any.peep.list.label.author = Nick
+
+any.peep.label.title = Título
+any.peep.label.instantiationMoment = Momento
+any.peep.label.message = Mensaje
+any.peep.form.label.link = Link
+any.peep.form.label.email = Correo
+any.peep.form.label.nick = Nick
+any.peep.form.label.confirmation = Confirmación
+
+any.peep.form.button.create = Crear
