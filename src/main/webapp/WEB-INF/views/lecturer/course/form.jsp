@@ -10,4 +10,6 @@
 	<acme:input-select code="lecturer.course.form.label.indicator" path="indicator" choices="${indicators}"/>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="lecturer.course.form.label.link" path="link"/>
+	
+		<acme:button code="lecturer.course.form.button.lectures" action="/lecturer/lecture/list-mine?masterId=${id}"/>
 </acme:form>

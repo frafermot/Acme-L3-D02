@@ -1,0 +1,12 @@
+lecturer.lecture.list.label.title = Title
+lecturer.lecture.list.label.lectureAbstract = Lecture Abstract
+lecturer.lecture.list.label.indicator = Type
+lecturer.lecture.list.label.published = Published
+
+lecturer.lecture.form.label.title = Title
+lecturer.lecture.form.label.lectureAbstract = Lecture Abstract
+lecturer.lecture.form.label.estimatedTime = Estimated Time
+lecturer.lecture.form.label.body = Body
+lecturer.lecture.form.label.indicator = Type
+lecturer.lecture.form.label.link = Link
+lecturer.lecture.form.label.published = Published

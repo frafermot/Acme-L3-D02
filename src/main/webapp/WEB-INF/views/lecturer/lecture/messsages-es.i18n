@@ -1,0 +1,12 @@
+lecturer.lecture.list.label.title = Título
+lecturer.lecture.list.label.lectureAbstract = Resumen de la clase
+lecturer.lecture.list.label.indicator = Tipo
+lecturer.lecture.list.label.published = Publicado
+
+lecturer.lecture.form.label.title = Título
+lecturer.lecture.form.label.lectureAbstract = Resumen de la clase
+lecturer.lecture.form.label.estimatedTime = Tiempo estimado
+lecturer.lecture.form.label.body = Cuerpo
+lecturer.lecture.form.label.indicator = Tipo
+lecturer.lecture.form.label.link = Link
+lecturer.lecture.form.label.published = Publicado
