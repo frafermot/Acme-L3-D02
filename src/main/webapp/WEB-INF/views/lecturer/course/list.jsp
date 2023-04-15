@@ -8,3 +8,5 @@
 	<acme:list-column code="lecturer.course.list.label.title" path="title" width="30%"/>
 	<acme:list-column code="lecturer.course.list.label.courseAbstract" path="courseAbstract" width="60%"/>
 </acme:list>
+
+<acme:button code="lecturer.course.form.button.create" action="/lecturer/course/create"/>
