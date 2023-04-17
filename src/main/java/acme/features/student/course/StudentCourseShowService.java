@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
-import acme.entities.course.LectureCourse;
+import acme.entities.lecture.Lecture;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -62,12 +62,12 @@ public class StudentCourseShowService extends AbstractService<Student, Course> {
 	public void unbind(final Course object) {
 		assert object != null;
 
-		Collection<LectureCourse> lectures;
+		Collection<Lecture> lectures;
 		final SelectChoices choices;
-		final Tuple tuple;
+		Tuple tuple;
 
 		lectures = this.repository.findLecturesByCourseId(object.getId());
-		//choices = SelectChoices.from(lectures, "title", lectures.getLecture());
+		//choices = SelectChoices.from(lectures, "title");
 
 		SelectChoices indicators;
 		//Tuple tuple;
@@ -77,6 +77,7 @@ public class StudentCourseShowService extends AbstractService<Student, Course> {
 		tuple = super.unbind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link");
 		tuple.put("readOnly", true);
 		tuple.put("indicators", indicators);
+		tuple.put("lecturer", object.getLecturer().getAlmaMater());
 		//tuple.put("lecture", choices.getSelected().getKey());
 		//tuple.put("lectures", choices);
 
