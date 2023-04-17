@@ -8,3 +8,7 @@ student.enrolment.form.label.workTime = Tiempo de trabajo
 student.enrolment.form.label.cardHolder = Titular de la tarjeta de crédito
 student.enrolment.form.label.cardNibble = Últimos 4 dígitos de la tarjeta de crédito
 student.enrolment.form.label.finalised = Finalizada
+
+student.enrolment.form.button.update = Actualizar
+student.enrolment.form.button.delete = Borrer
+student.enrolment.form.button.create = Registrar matrícula

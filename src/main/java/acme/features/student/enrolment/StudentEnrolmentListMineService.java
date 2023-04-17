@@ -29,11 +29,7 @@ public class StudentEnrolmentListMineService extends AbstractService<Student, En
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = super.getRequest().getPrincipal().hasRole("Student");
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -42,7 +38,7 @@ public class StudentEnrolmentListMineService extends AbstractService<Student, En
 		Principal principal;
 
 		principal = super.getRequest().getPrincipal();
-		objects = this.repository.findManyCoursesByStudentId(principal.getActiveRoleId());
+		objects = this.repository.findManyEnrolmentsByStudentId(principal.getActiveRoleId());
 
 		super.getBuffer().setData(objects);
 	}

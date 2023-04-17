@@ -8,3 +8,7 @@ student.enrolment.form.label.workTime = Work time
 student.enrolment.form.label.cardHolder = Credit card holder
 student.enrolment.form.label.cardNibble = Last 4 digits of credit card
 student.enrolment.form.label.finalised = Finalised
+
+student.enrolment.form.button.update = Update
+student.enrolment.form.button.delete = Delete
+student.enrolment.form.button.create = Register enrolment

@@ -1,11 +1,15 @@
 
 package acme.features.student.enrolment;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -64,11 +68,19 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		assert object != null;
 
 		boolean finalised;
+		Collection<Course> courses;
+		SelectChoices choices;
 		Tuple tuple;
+
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		finalised = object.getCardHolder() != null && object.getCardNibble() != null ? true : false;
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
+		tuple.put("readonly", true);
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 		tuple.put("finalised", finalised);
 		super.getResponse().setData(tuple);
 

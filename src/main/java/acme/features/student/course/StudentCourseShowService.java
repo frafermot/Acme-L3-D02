@@ -75,7 +75,7 @@ public class StudentCourseShowService extends AbstractService<Student, Course> {
 		indicators = SelectChoices.from(Indication.class, object.getIndicator());
 
 		tuple = super.unbind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link");
-		tuple.put("readOnly", true);
+		tuple.put("readonly", true);
 		tuple.put("indicators", indicators);
 		tuple.put("lecturer", object.getLecturer().getAlmaMater());
 		//tuple.put("lecture", choices.getSelected().getKey());
