@@ -47,7 +47,7 @@ public class LecturerLectureListMineService extends AbstractService<Lecturer, Le
 		int masterId;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManyLecturesByMasterId(masterId);
+		objects = this.repository.findManyLecturesByCourseId(masterId);
 
 		super.getBuffer().setData(objects);
 	}

@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.lecture;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -90,6 +92,22 @@ public class LecturerLectureCreateService extends AbstractService<Lecturer, Lect
 		lc.setLecture(object);
 		this.repository.save(lc);
 
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(masterId);
+		int numTeoricos = 0;
+		int numPracticos = 0;
+		for (final Lecture lecture : lectures)
+			if (lecture.getIndicator().equals(Indication.THEORETICAL))
+				numTeoricos++;
+			else if (lecture.getIndicator().equals(Indication.HANDS_ON))
+				numPracticos++;
+		if (numTeoricos > numPracticos)
+			course.setIndicator(Indication.THEORETICAL);
+		else if (numPracticos > numTeoricos)
+			course.setIndicator(Indication.HANDS_ON);
+		else
+			course.setIndicator(Indication.BALANCED);
+
+		this.repository.save(course);
 	}
 
 	@Override
