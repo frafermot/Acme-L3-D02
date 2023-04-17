@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,10 +62,12 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Course existing;
+			Optional<Course> existing;
 
-			existing = this.repository.findOneCourseByCode(object.getCode()).get();
-			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
+			existing = this.repository.findOneCourseByCode(object.getCode());
+			if (existing.isPresent())
+				super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
+
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {

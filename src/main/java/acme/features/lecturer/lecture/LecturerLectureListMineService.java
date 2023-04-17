@@ -1,5 +1,5 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.lecturer.lecture;
 
 import java.util.Collection;
 
@@ -55,10 +55,13 @@ public class LecturerLectureListMineService extends AbstractService<Lecturer, Le
 	@Override
 	public void unbind(final Lecture object) {
 		assert object != null;
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
 
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "lectureAbstract", "indicator", "published");
+		super.getResponse().setGlobal("masterId", masterId);
 
 		super.getResponse().setData(tuple);
 	}

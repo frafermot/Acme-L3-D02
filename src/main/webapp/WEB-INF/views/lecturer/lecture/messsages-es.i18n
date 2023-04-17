@@ -10,3 +10,11 @@ lecturer.lecture.form.label.body = Cuerpo
 lecturer.lecture.form.label.indicator = Tipo
 lecturer.lecture.form.label.link = Link
 lecturer.lecture.form.label.published = Publicado
+lecturer.lecture.list.button.create = Crear
+
+lecturer.lecture.form.button.create = Crear
+lecturer.lecture.form.button.update = Actualizar
+lecturer.lecture.form.button.delete = Eliminar
+lecturer.lecture.form.button.publish = Publicar
+
+lecturer.lecture.form.error.negativeTime = El tiempo estimado debe ser mayor que cero

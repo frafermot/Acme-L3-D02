@@ -1,5 +1,5 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.lecturer.lecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
