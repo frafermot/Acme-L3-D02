@@ -26,10 +26,12 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.juaramlop2" action="http://www.spotify.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-linkAlejandro" action="https://www.stackoverflow.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.course.list" action="/any/course/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.peep.list" action="/any/peep/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.anonymous.course.list" action="/any/course/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.peep.list" action="/any/peep/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.note.list" action="/authenticated/note/list"/>
 			<acme:menu-suboption code="master.menu.assistant.tutorial.list-all" action="/assistant/tutorial/list-all"/>

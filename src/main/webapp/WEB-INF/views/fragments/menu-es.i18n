@@ -25,12 +25,15 @@ master.menu.anonymous.favourite-link-jaime = 29500154D:Garcia Garcia, Jaime
 master.menu.anonymous.favourite-linkAntonio = 29554475G: Peláez Moreno, Antonio
 master.menu.anonymous.favourite-linkAlejandro = 48993614A: Sánchez Mayorga, Alejandro
 master.menu.anonymous.course.list = Listar Cursos
+master.menu.anonymous.peep.list = Listar Peeps
 
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.note.list = Listar Notas
 master.menu.authenticated.offer.list = Ver ofertas
+master.menu.anonymous.course.list = Listar Cursos
+master.menu.anonymous.peep.list = Listar Peeps
 
 # master.menu.assistant ###################################################
 
