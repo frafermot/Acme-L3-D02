@@ -1,25 +1,25 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.administrator.systemConfiguration;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.lecture.Lecture;
+import acme.entities.systemConfiguration.SystemConfiguration;
+import acme.framework.components.accounts.Administrator;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Lecturer;
 
 @Controller
-public class LecturerLectureController extends AbstractController<Lecturer, Lecture> {
+public class AdministratorSystemConfigurationController extends AbstractController<Administrator, SystemConfiguration> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected LecturerLectureListMineService	listMineService;
+	protected AdministratorSystemConfigurationShowService	showService;
 
 	@Autowired
-	protected LecturerLectureShowService		showService;
+	protected AdministratorSystemConfigurationUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -27,8 +27,6 @@ public class LecturerLectureController extends AbstractController<Lecturer, Lect
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("show", this.showService);
-
-		super.addCustomCommand("list-mine", "list", this.listMineService);
-
+		super.addBasicCommand("update", this.updateService);
 	}
 }

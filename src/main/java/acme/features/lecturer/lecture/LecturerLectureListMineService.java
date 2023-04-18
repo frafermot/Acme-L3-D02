@@ -1,5 +1,5 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.lecturer.lecture;
 
 import java.util.Collection;
 
@@ -28,7 +28,16 @@ public class LecturerLectureListMineService extends AbstractService<Lecturer, Le
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int masterId;
+		Lecturer lecturer;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		lecturer = this.repository.findOneLecturerByCourseId(masterId);
+
+		status = super.getRequest().getPrincipal().hasRole(lecturer);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -38,7 +47,7 @@ public class LecturerLectureListMineService extends AbstractService<Lecturer, Le
 		int masterId;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManyLecturesByMasterId(masterId);
+		objects = this.repository.findManyLecturesByCourseId(masterId);
 
 		super.getBuffer().setData(objects);
 	}
@@ -46,10 +55,13 @@ public class LecturerLectureListMineService extends AbstractService<Lecturer, Le
 	@Override
 	public void unbind(final Lecture object) {
 		assert object != null;
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
 
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "lectureAbstract", "indicator", "published");
+		super.getResponse().setGlobal("masterId", masterId);
 
 		super.getResponse().setData(tuple);
 	}

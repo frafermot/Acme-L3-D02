@@ -10,3 +10,11 @@ lecturer.lecture.form.label.body = Body
 lecturer.lecture.form.label.indicator = Type
 lecturer.lecture.form.label.link = Link
 lecturer.lecture.form.label.published = Published
+lecturer.lecture.list.button.create = Create
+
+lecturer.lecture.form.button.create = Create
+lecturer.lecture.form.button.update = Update
+lecturer.lecture.form.button.delete = Delete
+lecturer.lecture.form.button.publish = Publish
+
+lecturer.lecture.form.error.negativeTime = Estimated Time has to be grater than 0
