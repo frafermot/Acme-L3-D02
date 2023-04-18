@@ -1,13 +1,10 @@
 
 package acme.features.student.course;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
-import acme.entities.lecture.Lecture;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -62,11 +59,11 @@ public class StudentCourseShowService extends AbstractService<Student, Course> {
 	public void unbind(final Course object) {
 		assert object != null;
 
-		Collection<Lecture> lectures;
-		final SelectChoices choices;
+		//Collection<Lecture> lectures;
+		//final SelectChoices choices;
 		Tuple tuple;
 
-		lectures = this.repository.findLecturesByCourseId(object.getId());
+		//lectures = this.repository.findLecturesByCourseId(object.getId());
 		//choices = SelectChoices.from(lectures, "title");
 
 		SelectChoices indicators;

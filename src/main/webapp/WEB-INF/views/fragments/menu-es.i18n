@@ -71,7 +71,8 @@ master.menu.consumer.favourite-link = Enlace favorito
 # master.menu.student ##########################################################
 
 master.menu.student = Estudiante
-master.menu.student.enrolment-list-mine = Mis matrículas
+master.menu.student.course.list = Ver cursos
+master.menu.student.enrolment.list-mine = Mis matrículas
 
 # master.menu.assistant ##########################################################
 

@@ -29,11 +29,7 @@ public class StudentCourseListService extends AbstractService<Student, Course> {
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = super.getRequest().getPrincipal().hasRole("Student");
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
