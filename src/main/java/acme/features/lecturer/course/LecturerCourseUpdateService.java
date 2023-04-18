@@ -1,6 +1,8 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,24 +14,15 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseShowService extends AbstractService<Lecturer, Course> {
+public class LecturerCourseUpdateService extends AbstractService<Lecturer, Course> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected LecturerCourseRepository repository;
 
-	// AbstractService interface ----------------------------------------------
+	// AbstractService interface ----------------------------------------------ç
 
-
-	@Override
-	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
-	}
 
 	@Override
 	public void authorise() {
@@ -43,7 +36,16 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		lecturer = course == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer);
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(status && !course.isPublished());
+	}
+
+	@Override
+	public void check() {
+		boolean status;
+
+		status = super.getRequest().hasData("id", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
@@ -55,6 +57,45 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		object = this.repository.findOneCourseById(id);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Course object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link", "published");
+	}
+
+	@Override
+	public void validate(final Course object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			boolean valid;
+			Optional<Course> existing;
+
+			existing = this.repository.findOneCourseByCode(object.getCode());
+			if (!existing.isPresent())
+				valid = true;
+			else if (existing.get().getId() == object.getId())
+				valid = true;
+			else
+				valid = false;
+			super.state(valid, "code", "lecturer.course.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("retailPrice")) {
+			Double amount;
+			amount = object.getRetailPrice().getAmount();
+			super.state(amount >= 0, "retailPrice", "lecturer.course.form.error.negativePrice");
+		}
+	}
+
+	@Override
+	public void perform(final Course object) {
+		assert object != null;
+
+		this.repository.save(object);
 	}
 
 	@Override

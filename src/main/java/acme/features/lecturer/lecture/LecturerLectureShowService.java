@@ -1,5 +1,5 @@
 
-package acme.features.lecturer.lectures;
+package acme.features.lecturer.lecture;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,8 +34,12 @@ public class LecturerLectureShowService extends AbstractService<Lecturer, Lectur
 	@Override
 	public void authorise() {
 		boolean status;
+		int lectureId;
+		Lecturer lecturer;
 
-		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+		lectureId = super.getRequest().getData("id", int.class);
+		lecturer = this.repository.findOneLecturerByLectureId(lectureId);
+		status = super.getRequest().getPrincipal().hasRole(lecturer);
 
 		super.getResponse().setAuthorised(status);
 	}
