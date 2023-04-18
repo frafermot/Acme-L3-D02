@@ -111,17 +111,23 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
-
+		Tuple tuple;
 		Collection<Course> courses;
 		SelectChoices choices;
-		Tuple tuple;
+		Principal principal;
+		Collection<Tutorial> myTutorials;
 
-		courses = this.repository.findAllCourses();
+		courses = this.repository.findAccessibleCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
+		principal = super.getRequest().getPrincipal();
+		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
 		tuple = super.unbind(object, AssistantTutorialDeleteService.ATTRIBUTES);
-		tuple.put("course", choices.getSelected().getKey());
+		//tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+		tuple.put("assistant", object.getAssistant().getSupervisor());
+		tuple.put("showSessions", object.isPublished() && principal.hasRole(Assistant.class) && myTutorials.contains(object));
+		tuple.put("showAssistant", object.isPublished());
 
 		super.getResponse().setData(tuple);
 	}

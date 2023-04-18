@@ -2,6 +2,7 @@ assistant.session.list.label.title = Título
 assistant.session.list.label.indication = Tipo
 assistant.session.list.label.periodStart = Inicio
 assistant.session.list.label.periodEnd = Fin
+assistant.session.list.label.publish = Publicado
 assistant.session.list.button.create = Crear
 
 assistant.session.form.label.title = Título:
@@ -15,3 +16,6 @@ assistant.session.form.button.create = Crear
 assistant.session.form.button.update = Actualizar
 assistant.session.form.button.delete = Eliminar
 assistant.session.form.button.publish = Publicar
+
+assistant.session.form.error.periodStart = La fecha de inicio debe ser al menos un día después del momento actual
+assistant.session.form.error.periodEnd = La fecha de fin debe ser entre 1 y 5 horas después de la fecha de inicio
