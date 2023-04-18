@@ -38,7 +38,15 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	public void load() {
 		Enrolment object;
 
+		int studentId;
+		final Student student;
+
 		object = new Enrolment();
+
+		studentId = super.getRequest().getPrincipal().getActiveRoleId();
+		student = this.repository.findOneStudentById(studentId);
+
+		object.setStudent(student);
 
 		super.getBuffer().setData(object);
 	}
@@ -47,7 +55,14 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
 		super.bind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
+		object.setCourse(course);
 	}
 
 	@Override
@@ -58,13 +73,6 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	@Override
 	public void perform(final Enrolment object) {
 		assert object != null;
-
-		int studentId;
-		final Student student;
-
-		studentId = super.getRequest().getPrincipal().getActiveRoleId();
-		student = this.repository.findOneStudentById(studentId);
-		object.setStudent(student);
 
 		this.repository.save(object);
 	}
@@ -81,6 +89,7 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
+		tuple.put("finalised", false);
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

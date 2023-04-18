@@ -5,6 +5,7 @@ student.enrolment.form.label.code = Code
 student.enrolment.form.label.motivation = Motivation
 student.enrolment.form.label.goals = Goals
 student.enrolment.form.label.workTime = Work time
+student.enrolment.form.label.course = Course
 student.enrolment.form.label.cardHolder = Credit card holder
 student.enrolment.form.label.cardNibble = Last 4 digits of credit card
 student.enrolment.form.label.finalised = Finalised

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -40,16 +39,18 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		int masterId;
 		Enrolment enrolment;
 		Student student;
-		Principal principal;
+		//final Principal principal;
 
 		masterId = super.getRequest().getData("id", int.class);
 		enrolment = this.repository.findOneEnrolmentById(masterId);
 		student = enrolment == null ? null : enrolment.getStudent();
+		status = super.getRequest().getPrincipal().hasRole(student);
 
-		principal = super.getRequest().getPrincipal();
+		//principal = super.getRequest().getPrincipal();
 
-		status = student == null ? false : principal.getActiveRoleId() == student.getId();
+		//status = student == null ? false : principal.getActiveRoleId() == student.getId();
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -78,7 +79,8 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		finalised = object.getCardHolder() != null && object.getCardNibble() != null ? true : false;
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
-		tuple.put("readonly", true);
+		if (finalised)
+			tuple.put("readonly", true);
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		tuple.put("finalised", finalised);

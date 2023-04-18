@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.enrolment.Enrolment;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -37,19 +36,22 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	@Override
 	public void authorise() {
 		boolean status;
+		boolean finalised;
 		int masterId;
 		Enrolment enrolment;
 		Student student;
-		Principal principal;
 
 		masterId = super.getRequest().getData("id", int.class);
 		enrolment = this.repository.findOneEnrolmentById(masterId);
-		student = enrolment == null ? null : enrolment.getStudent();
 
-		principal = super.getRequest().getPrincipal();
+		if (enrolment != null) {
+			student = enrolment.getStudent();
+			finalised = enrolment.getCardHolder() != null && enrolment.getCardNibble() != null ? true : false;
+			status = super.getRequest().getPrincipal().hasRole(student);
+			super.getResponse().setAuthorised(status && !finalised);
+		} else
+			super.getResponse().setAuthorised(false);
 
-		status = student == null ? false : principal.getActiveRoleId() == student.getId();
-		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -61,6 +63,25 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		object = this.repository.findOneEnrolmentById(id);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Enrolment object) {
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
+		object.setCourse(course);
+	}
+
+	@Override
+	public void validate(final Enrolment object) {
+		assert object != null;
 	}
 
 	@Override
