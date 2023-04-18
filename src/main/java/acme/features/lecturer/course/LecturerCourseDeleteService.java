@@ -1,10 +1,13 @@
 
 package acme.features.lecturer.course;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
+import acme.entities.course.LectureCourse;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -12,7 +15,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseShowService extends AbstractService<Lecturer, Course> {
+public class LecturerCourseDeleteService extends AbstractService<Lecturer, Course> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -43,7 +46,7 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		lecturer = course == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer);
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(status && !course.isPublished());
 	}
 
 	@Override
@@ -55,6 +58,29 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		object = this.repository.findOneCourseById(id);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Course object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link", "published");
+	}
+
+	@Override
+	public void validate(final Course object) {
+		assert object != null;
+	}
+
+	@Override
+	public void perform(final Course object) {
+		assert object != null;
+
+		final Collection<LectureCourse> lectureCourses;
+
+		lectureCourses = this.repository.findlectureCoursesByCourseId(object.getId());
+		this.repository.deleteAll(lectureCourses);
+		this.repository.delete(object);
 	}
 
 	@Override
@@ -71,4 +97,5 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 
 		super.getResponse().setData(tuple);
 	}
+
 }

@@ -1,6 +1,7 @@
 lecturer.course.list.label.code = Código
 lecturer.course.list.label.title = Título
 lecturer.course.list.label.courseAbstract = Resumen del curso
+lecturer.course.list.label.published = Publicado
 
 lecturer.course.form.label.code = Código
 lecturer.course.form.label.title = Título
@@ -8,3 +9,14 @@ lecturer.course.form.label.courseAbstract = Resumen del curso
 lecturer.course.form.label.indicator = Tipo
 lecturer.course.form.label.retailPrice = Precio
 lecturer.course.form.label.link = Link
+lecturer.course.form.label.published = Publicado
+
+lecturer.course.form.button.lectures = Clases
+lecturer.course.form.button.create = Crear
+lecturer.course.form.button.update = Actualizar
+lecturer.course.form.button.delete = Eliminar
+lecturer.course.form.button.publish = Publicar
+
+lecturer.course.form.error.duplicated = Este código ya está usado
+lecturer.course.form.error.negativePrice = El precio no puede ser negativo
+lecturer.course.form.error.onlyTheoretical = Cursos puramente teóricos no son permitidos
