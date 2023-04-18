@@ -20,3 +20,4 @@ lecturer.course.form.button.publish = Publicar
 lecturer.course.form.error.duplicated = Este código ya está usado
 lecturer.course.form.error.negativePrice = El precio no puede ser negativo
 lecturer.course.form.error.onlyTheoretical = Cursos puramente teóricos no son permitidos
+lecturer.course.form.error.allPublished = Todas las clases deben estar publicadas
