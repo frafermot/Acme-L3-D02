@@ -9,3 +9,5 @@
 	<acme:list-column code="lecturer.lecture.list.label.indicator" path="indicator" width="50%"/>
 	<acme:list-column code="lecturer.lecture.list.label.published" path="published" width="10%"/>
 </acme:list>
+
+<acme:button code="lecturer.lecture.list.button.create" action="/lecturer/lecture/create?masterId=${masterId}"/>
