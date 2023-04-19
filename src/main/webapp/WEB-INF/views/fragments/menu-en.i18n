@@ -67,6 +67,11 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.company ##########################################################
+
+master.menu.company = Company
+master.menu.company.practicum.list = List Practicums
+
 # master.menu.assistant ##########################################################
 
 master.menu.assistant = Assistant

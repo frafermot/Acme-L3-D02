@@ -1,6 +1,6 @@
-key,code,title,practicum-abstract,goals,estimated-total-time,key:company,key:course
-practicum-01,ABC123,This is the title of practicum 1 with 75 characters                      75,This is an example of the practicum abstract number 1,G 1,7.0,company1,course-01
-practicum-02,RMA000,This is the title of practicum 2,This is an example of the practicum abstract number 2 with 100 characters                        100,Goals of practicum 2,12.3,company2,course-02
-practicum-03,RBB007,T,This is a practicum abstract number 3,Goals,0.1,company2,course-01
-practicum-04,E042,This is the title of practicum 4 but have more characters,A,Goals of practicum 4 with more characters,11.7,company1,course-02
-practicum-05,CR007,This is the title of practicum 5,This is an example of the practicum abstract number 5,Goals of practicum 5 with 100 characters                                                         100,6.9,company1,course-04
+key,code,title,practicum-abstract,goals,estimated-total-time,published,key:company,key:course
+practicum-01,ABC123,This is the title of practicum 1 with 75 characters                      75,This is an example of the practicum abstract number 1,G 1,7.0,true,company1,course-01
+practicum-02,RMA000,This is the title of practicum 2,This is an example of the practicum abstract number 2 with 100 characters                        100,Goals of practicum 2,12.3,true,company2,course-02
+practicum-03,RBB007,T,This is a practicum abstract number 3,Goals,0.1,false,company2,course-01
+practicum-04,E042,This is the title of practicum 4 but have more characters,A,Goals of practicum 4 with more characters,11.7,false,company1,course-02
+practicum-05,CR007,This is the title of practicum 5,This is an example of the practicum abstract number 5,Goals of practicum 5 with 100 characters                                                         100,6.9,true,company1,course-04

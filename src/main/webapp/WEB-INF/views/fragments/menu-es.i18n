@@ -68,6 +68,11 @@ master.menu.anonymous.favourite-link-jaime = 29500154D:Garcia Garcia, Jaime
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.company ##########################################################
+
+master.menu.company = Empresa
+master.menu.company.practicum.list = Listar Prácticas
+
 # master.menu.assistant ##########################################################
 
 master.menu.assistant = Asistente
