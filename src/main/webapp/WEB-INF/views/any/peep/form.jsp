@@ -9,7 +9,7 @@
 	<acme:input-textarea code="any.peep.form.label.message" path="message"/>
 	<acme:input-url code="any.peep.form.label.link" path="link"/>
 	<acme:input-email code="any.peep.form.label.email" path="email"/>
-	<acme:input-textbox code="any.peep.form.label.nick" path="mick"/>
+	<acme:input-textbox code="any.peep.form.label.nick" path="nick"/>
 	
 	<jstl:if test="${ _command == 'create'}">
 		<acme:submit code="any.peep.form.button.create" action="/any/peep/create"/>

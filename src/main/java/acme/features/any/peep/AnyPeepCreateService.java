@@ -37,6 +37,9 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 		object = new Peep();
 		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
+		if (user.isAuthenticated())
+			object.setNick(user.getIdentity().getFullName());
+
 		super.getBuffer().setData(object);
 	}
 
@@ -44,7 +47,7 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	public void bind(final Peep object) {
 		assert object != null;
 
-		super.bind(object, "title", "instantiationMoment", "message", "link", "email", "nick");
+		super.bind(object, "title", "message", "link", "email", "nick");
 	}
 
 	@Override
@@ -66,7 +69,6 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "email", "nick");
-		tuple.put("readOnly", false);
 
 		super.getResponse().setData(tuple);
 	}
