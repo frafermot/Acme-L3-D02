@@ -41,7 +41,7 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 	public void load() {
 		SystemConfiguration object;
 
-		object = this.repository.findSystemConfiguration();
+		object = this.repository.findActualSystemConfiguration();
 
 		super.getBuffer().setData(object);
 	}
@@ -59,21 +59,9 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("systemCurrency")) {
-			final SystemConfiguration systConf = this.repository.findSystemConfiguration();
-			final String acceptedCurrencies = systConf.getAcceptedCurrencies();
-			final String[] currencies = object.getAcceptedCurrencies().split(",");
-			boolean currencyExists = false;
-			boolean currencyExists2 = false;
-			for (final String currency : currencies)
-				if (object.getSystemCurrency().equals(currency)) {
-					currencyExists = true;
-					break;
-				} else if (acceptedCurrencies.contains(currency)) {
-					currencyExists2 = true;
-					break;
-				}
-			super.state(currencyExists, "systemCurrency", "administrator.config.form.error.unavailable");
-			super.state(currencyExists2, "acceptedCurrencies", "administrator.config.form.error.unavailable2");
+			final String acceptedCurrencies = object.getAcceptedCurrencies();
+			final String systemCurrency = object.getSystemCurrency();
+			super.state(acceptedCurrencies.contains(systemCurrency), "systemCurrency", "administrator.config.form.error.systemCurrency");
 		}
 	}
 

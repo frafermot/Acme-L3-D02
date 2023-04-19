@@ -41,7 +41,7 @@ public class AdministratorSystemConfigurationShowService extends AbstractService
 	public void load() {
 		SystemConfiguration object;
 
-		object = this.repository.findSystemConfiguration();
+		object = this.repository.findActualSystemConfiguration();
 
 		super.getBuffer().setData(object);
 	}
