@@ -45,6 +45,8 @@ public class PracticumSession extends AbstractEntity {
 	@URL
 	protected String			link;
 
+	protected boolean			published;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
