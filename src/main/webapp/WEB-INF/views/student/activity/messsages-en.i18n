@@ -1,0 +1,14 @@
+student.activity.list.label.title = Title
+student.activity.list.label.enrolment-code = Enrolment code
+
+student.activity.form.label.title = Title
+student.activity.form.label.activityAbstract = Activity abstract
+student.activity.form.label.indicator = Type
+student.activity.form.label.periodStart = Start of activity
+student.activity.form.label.periodEnd = End of activity
+student.activity.form.label.link = link
+student.activity.form.label.enrolment-code = Enrolment to which it belongs
+
+student.activity.form.button.update = Update
+student.activity.form.button.delete = Delete
+student.activity.form.button.create = Register activity

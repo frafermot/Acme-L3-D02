@@ -11,5 +11,5 @@ student.enrolment.form.label.cardNibble = Últimos 4 dígitos de la tarjeta de c
 student.enrolment.form.label.finalised = Finalizada
 
 student.enrolment.form.button.update = Actualizar
-student.enrolment.form.button.delete = Borrer
+student.enrolment.form.button.delete = Borrar
 student.enrolment.form.button.create = Registrar matrícula
