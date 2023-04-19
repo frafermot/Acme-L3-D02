@@ -39,7 +39,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
-			<acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/perform"/>
+			<acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.assistant.tutorial.list-mine" action="/assistant/tutorial/list-mine"/>
 		</acme:menu-option>

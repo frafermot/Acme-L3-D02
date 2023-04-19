@@ -27,14 +27,14 @@ public class AssistantDashboardController extends AbstractController<Assistant, 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AssistantDashboardPerformService exchangeService;
+	protected AssistantDashboardShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("perform", this.exchangeService);
+		super.addBasicCommand("show", this.showService);
 	}
 
 }
