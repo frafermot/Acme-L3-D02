@@ -53,7 +53,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	public void bind(final Practicum object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company", "course");
+		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "course");
 	}
 
 	@Override
