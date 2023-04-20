@@ -1,5 +1,5 @@
 
-package acme.features.lecturer.course;
+package acme.features.lecturer.lecture;
 
 import java.util.Collection;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.course.LectureCourse;
+import acme.entities.lecture.Lecture;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -15,12 +16,12 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerCourseDeleteService extends AbstractService<Lecturer, Course> {
+public class LecturerLectureDeleteService extends AbstractService<Lecturer, Lecture> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected LecturerCourseRepository repository;
+	protected LecturerLectureRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -37,54 +38,56 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		Course course;
+		int id;
+		Lecture lecture;
 		Lecturer lecturer;
+		Course course;
 
-		masterId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(masterId);
-		lecturer = course == null ? null : course.getLecturer();
+		id = super.getRequest().getData("id", int.class);
+		lecture = this.repository.findOneLectureById(id);
+		course = this.repository.findOneCourseByLectureId(id);
+		lecturer = lecture == null ? null : course.getLecturer();
 		status = super.getRequest().getPrincipal().hasRole(lecturer);
 
-		super.getResponse().setAuthorised(status && !course.isPublished());
+		super.getResponse().setAuthorised(status && !course.isPublished() && !lecture.isPublished());
 	}
 
 	@Override
 	public void load() {
-		Course object;
+		Lecture object;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
+		object = this.repository.findOneLectureById(id);
 
 		super.getBuffer().setData(object);
 	}
 
 	@Override
-	public void bind(final Course object) {
+	public void bind(final Lecture object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link", "published");
+		super.bind(object, "title", "lectureAbstract", "estimatedTime", "body", "indicator", "link", "published");
 	}
 
 	@Override
-	public void validate(final Course object) {
+	public void validate(final Lecture object) {
 		assert object != null;
 	}
 
 	@Override
-	public void perform(final Course object) {
+	public void perform(final Lecture object) {
 		assert object != null;
 
 		final Collection<LectureCourse> lectureCourses;
 
-		lectureCourses = this.repository.findLectureCoursesByCourseId(object.getId());
+		lectureCourses = this.repository.findLectureCoursesByLectureId(object.getId());
 		this.repository.deleteAll(lectureCourses);
 		this.repository.delete(object);
 	}
 
 	@Override
-	public void unbind(final Course object) {
+	public void unbind(final Lecture object) {
 		assert object != null;
 
 		SelectChoices indicators;
@@ -92,7 +95,7 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 
 		indicators = SelectChoices.from(Indication.class, object.getIndicator());
 
-		tuple = super.unbind(object, "code", "title", "courseAbstract", "indicator", "retailPrice", "link", "published");
+		tuple = super.unbind(object, "title", "lectureAbstract", "estimatedTime", "body", "indicator", "link", "published");
 		tuple.put("indicators", indicators);
 
 		super.getResponse().setData(tuple);

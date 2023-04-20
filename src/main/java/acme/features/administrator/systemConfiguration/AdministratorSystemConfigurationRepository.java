@@ -15,6 +15,6 @@ public interface AdministratorSystemConfigurationRepository extends AbstractRepo
 	Administrator findOneAdministratorById(int administratorId);
 
 	@Query("select sc from SystemConfiguration sc")
-	SystemConfiguration findSystemConfiguration();
+	SystemConfiguration findActualSystemConfiguration();
 
 }

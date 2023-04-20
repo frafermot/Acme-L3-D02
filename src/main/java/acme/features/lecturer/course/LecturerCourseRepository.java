@@ -29,7 +29,7 @@ public interface LecturerCourseRepository extends AbstractRepository {
 	Optional<Course> findOneCourseByCode(String code);
 
 	@Query("select lc from LectureCourse lc where lc.course.id = :courseId")
-	Collection<LectureCourse> findlectureCoursesByCourseId(int courseId);
+	Collection<LectureCourse> findLectureCoursesByCourseId(int courseId);
 
 	@Query("select lc.lecture from LectureCourse lc where lc.course.id = :courseId")
 	Collection<Lecture> findManyLecturesByCourseId(int courseId);
