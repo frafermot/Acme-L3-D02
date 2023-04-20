@@ -41,6 +41,7 @@ master.menu.assistant = Asistente
 master.menu.assistant.tutorial.list-all = Listar Tutoriales
 master.menu.assistant.tutorial.list-mine = Listar mis Tutoriales
 master.menu.assistant.session.list-all = Listar Sesiones
+master.menu.assistant.dashboard = Panel
 
 # master.menu.administrator ###################################################
 

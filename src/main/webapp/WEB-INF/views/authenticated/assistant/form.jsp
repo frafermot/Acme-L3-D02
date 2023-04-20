@@ -17,8 +17,8 @@
 
 <acme:form>
 	<acme:input-textbox code="authenticated.assistant.form.label.supervisor" path="supervisor"/>
-	<acme:input-textbox code="authenticated.assistant.form.label.expertiseFields" path="expertiseFields"/>
-	<acme:input-textbox code="authenticated.assistant.form.label.resume" path="resume"/>
+	<acme:input-textarea code="authenticated.assistant.form.label.expertiseFields" path="expertiseFields"/>
+	<acme:input-textarea code="authenticated.assistant.form.label.resume" path="resume"/>
 	<acme:input-textbox code="authenticated.assistant.form.label.link" path="link"/>
 	
 	<acme:submit test="${_command == 'create'}" code="authenticated.assistant.form.button.create" action="/authenticated/assistant/create"/>

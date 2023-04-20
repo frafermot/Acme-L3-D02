@@ -78,13 +78,13 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 			boolean unique;
 
 			unique = this.repository.existsTutorialByCode(object.getCode());
-			super.state(unique, "code", "javax.validation.constraints.AssertTrue.message");
+			super.state(unique, "code", "assistant.tutorial.form.error.uniqueCode");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("course")) {
-			boolean emptyCourse;
+			boolean availableCourse;
 
-			emptyCourse = this.repository.checkEmptyCourseById(object.getCourse().getId());
-			super.state(emptyCourse, "course", "javax.validation.constraints.AssertTrue.message");
+			availableCourse = this.repository.checkAvailableCourseById(object.getCourse().getId());
+			super.state(availableCourse, "course", "assistant.tutorial.form.error.availableCourse");
 		}
 	}
 
@@ -103,12 +103,13 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		Collection<Course> courses;
 		SelectChoices choices;
 
-		courses = this.repository.findAllCourses();
+		courses = this.repository.findAccessibleCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, AssistantTutorialCreateService.ATTRIBUTES);
 		tuple.put("courses", choices);
 		tuple.put("assistant", object.getAssistant().getSupervisor());
+		tuple.put("showAssistant", false);
 
 		super.getResponse().setData(tuple);
 	}
