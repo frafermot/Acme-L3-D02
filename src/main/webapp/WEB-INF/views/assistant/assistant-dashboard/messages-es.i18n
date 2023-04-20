@@ -1,0 +1,15 @@
+assistant.dashboard.form.title.general-indicators = Indicadores generales
+assistant.dashboard.form.title.application-indication-tutorial = Tipos de cursos de los tutoriales
+assistant.dashboard.form.title.application-indication-session = Tipos de sesiones
+
+assistant.dashboard.form.label.numero-teoricos = Número de tutoriales de cursos teóricos
+assistant.dashboard.form.label.numero-practicos = Número de tutoriales de cursos prácticos
+assistant.dashboard.form.label.promedio-tutorial = Tiempo medio estimado de los tutoriales en minutos
+assistant.dashboard.form.label.desviacion-tutorial = Desviación estándar del tiempo estimado de los tutoriales en minutos
+assistant.dashboard.form.label.maximo-tutorial = Tiempo estimado máximo de un tutorial en minutos
+assistant.dashboard.form.label.minimo-tutorial = Tiempo estimado mínimo de un tutorial en minutos
+assistant.dashboard.form.label.promedio-sesion = Duración media de las sesiones en minutos
+assistant.dashboard.form.label.desviacion-sesion = Desviación estándar de la duración de las sesiones en minutos
+assistant.dashboard.form.label.maximo-sesion = Duración máxima de las sesiones en minutos
+assistant.dashboard.form.label.minimo-sesion = Duración mínima de las sesiones en minutos
+

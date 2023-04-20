@@ -78,7 +78,7 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 
 		final Collection<LectureCourse> lectureCourses;
 
-		lectureCourses = this.repository.findlectureCoursesByCourseId(object.getId());
+		lectureCourses = this.repository.findLectureCoursesByCourseId(object.getId());
 		this.repository.deleteAll(lectureCourses);
 		this.repository.delete(object);
 	}

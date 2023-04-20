@@ -2,6 +2,7 @@ assistant.session.list.label.title = Title
 assistant.session.list.label.indication = Indication
 assistant.session.list.label.periodStart = Period Start
 assistant.session.list.label.periodEnd = Period End
+assistant.session.list.label.publish = Publish
 assistant.session.list.button.create = Create
 
 assistant.session.form.label.title = Title:
@@ -15,3 +16,6 @@ assistant.session.form.button.create = Create
 assistant.session.form.button.update = Update
 assistant.session.form.button.delete = Delete
 assistant.session.form.button.publish = Publish
+
+assistant.session.form.error.periodStart = The start date must be at least one day ahead
+assistant.session.form.error.periodEnd = The end date must be between 1 and 5 hours after the start date

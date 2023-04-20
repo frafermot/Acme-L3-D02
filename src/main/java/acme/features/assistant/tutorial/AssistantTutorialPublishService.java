@@ -103,15 +103,17 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 
 			uniqueCode = this.repository.existsTutorialByCode(object.getCode());
 			sameCode = this.repository.checksameTutorialByCode(object.getCode(), object.getId());
-			super.state(uniqueCode || sameCode, "code", "javax.validation.constraints.AssertTrue.message");
+			if (!sameCode)
+				super.state(uniqueCode, "code", "assistant.tutorial.form.error.uniqueCode");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("course")) {
-			boolean emptyCourse;
+			boolean availableCourse;
 			boolean sameCourse;
 
-			emptyCourse = this.repository.checkEmptyCourseById(object.getCourse().getId());
+			availableCourse = this.repository.checkAvailableCourseById(object.getCourse().getId());
 			sameCourse = this.repository.checkSameCourseById(object.getCourse().getId(), object.getId());
-			super.state(emptyCourse || sameCourse, "course", "javax.validation.constraints.AssertTrue.message");
+			if (!sameCourse)
+				super.state(availableCourse, "course", "assistant.tutorial.form.error.availableCourse");
 		}
 	}
 
@@ -131,7 +133,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		SelectChoices choices;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
+		courses = this.repository.findAccessibleCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, AssistantTutorialDeleteService.ATTRIBUTES);

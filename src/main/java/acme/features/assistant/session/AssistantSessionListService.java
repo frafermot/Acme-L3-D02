@@ -35,12 +35,14 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 		boolean status;
 		int tutorialId;
 		Tutorial tutorial;
+		Collection<Tutorial> myTutorials;
 		Principal principal;
 
 		principal = super.getRequest().getPrincipal();
 		tutorialId = super.getRequest().getData("masterId", int.class);
 		tutorial = this.repository.findTutorialById(tutorialId);
-		status = tutorial != null && principal.hasRole(Assistant.class);
+		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
+		status = tutorial != null && tutorial.isPublished() && principal.hasRole(Assistant.class) && myTutorials.contains(tutorial);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -61,7 +63,7 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 		assert object != null;
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "indication", "periodStart", "periodEnd");
+		tuple = super.unbind(object, "title", "indication", "periodStart", "periodEnd", "published");
 
 		super.getResponse().setData(tuple);
 	}

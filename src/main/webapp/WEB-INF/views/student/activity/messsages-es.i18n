@@ -1,0 +1,16 @@
+student.activity.list.label.title = Título
+student.activity.list.label.enrolment-code = Código de matrícula
+
+student.activity.form.label.title = Título
+student.activity.form.label.activityAbstract = Resumen de actividad
+student.activity.form.label.indicator = Tipo
+student.activity.form.label.periodStart = Comienzo de actividad
+student.activity.form.label.periodEnd = Fin de actividad
+student.activity.form.label.link = Enlace
+student.activity.form.label.enrolment-code = Matrícula a la que pertenece
+
+student.activity.form.button.update = Actualizar
+student.activity.form.button.delete = Borrar
+student.activity.form.button.create = Registrar actividad
+
+student.activity.form.error.periodEnd = El final de la actividad debe ser posterior a su inicio

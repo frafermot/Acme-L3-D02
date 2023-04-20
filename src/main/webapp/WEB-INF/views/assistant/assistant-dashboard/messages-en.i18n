@@ -1,0 +1,15 @@
+assistant.dashboard.form.title.general-indicators = General indicators
+assistant.dashboard.form.title.application-indication-tutorial = Indications in course tutorials
+assistant.dashboard.form.title.application-indication-session = Indications in sessions  
+
+assistant.dashboard.form.label.number-of-tutorial-theorical = Number of theoretical course tutorials
+assistant.dashboard.form.label.number-of-tutorial-hands-on = Number of hands-on course tutorials
+assistant.dashboard.form.label.average-tutorial = Average estimated time for tutorials in minutes
+assistant.dashboard.form.label.deviation-tutorial = Standard deviation of estimated time for tutorials in minutes
+assistant.dashboard.form.label.max-tutorial = Maximum estimated time for a tutorial in minutes
+assistant.dashboard.form.label.min-tutorial = Minimum estimated time for a tutorial in minutes
+assistant.dashboard.form.label.average-session = Average session duration in minutes
+assistant.dashboard.form.label.deviation-session = Standard deviation of session durations in minutes
+assistant.dashboard.form.label.max-session = Maximum session duration in minutes
+assistant.dashboard.form.label.min-session = Minimum session duration in minutes
+

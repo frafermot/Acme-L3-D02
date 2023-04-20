@@ -48,7 +48,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 
 	@Override
 	public void authorise() {
-		final boolean status;
+		boolean status;
 		int id;
 		Course course;
 		Principal principal;
@@ -56,6 +56,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		id = super.getRequest().getData("id", int.class);
 		principal = super.getRequest().getPrincipal();
 		course = this.repository.findOneCourseById(id);
+
 		status = course != null && !course.isPublished() && principal.hasRole(course.getLecturer());
 
 		super.getResponse().setAuthorised(status);
@@ -91,6 +92,10 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 			final boolean onlyTheoretical = lectures.stream().allMatch(x -> x.getIndicator().equals(Indication.THEORETICAL));
 			super.state(!onlyTheoretical, "indicator", "lecturer.course.form.error.onlyTheoretical");
 		}
+		final Collection<Lecture> lectures = this.repository.findManyLecturesByCourseId(object.getId());
+		final boolean allPublished = lectures.stream().allMatch(x -> x.isPublished() == true);
+		super.state(allPublished, "*", "lecturer.course.form.error.allPublished");
+
 	}
 
 	@Override
