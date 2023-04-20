@@ -74,7 +74,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
-		System.out.println(this.repository.findAllEnrolmentsCodes());
+		//System.out.println(this.repository.findAllEnrolmentsCodes());
 
 		super.bind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
 		object.setCourse(course);
@@ -87,19 +87,25 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			boolean status;
 			status = this.repository.findAllEnrolmentsCodes().stream().anyMatch(c -> c == object.getCode()) && this.repository.findOneEnrolmentById(object.getId()).getCode() != object.getCode();
-			super.state(status, "code", "student.enrolment.form.error.code");
+			super.state(!status, "code", "student.enrolment.form.error.code");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("cardHolder"))
-			super.state(object.getCardHolder().trim() == "", "cardHolder", "student.enrolment.form.error.cardHolder");
+			super.state(object.getCardHolder() == "" || object.getCardHolder().trim().length() > 0, "cardHolder", "student.enrolment.form.error.cardHolder");
 
 		if (!super.getBuffer().getErrors().hasErrors("cardNibble"))
-			super.state(!object.getCardNibble().matches("^[0-9]{4}$") && object.getCardNibble() != null, "cardNibble", "student.enrolment.form.error.cardNibble");
+			super.state(object.getCardNibble() == "" || object.getCardNibble().matches("^[0-9]{4}$"), "cardNibble", "student.enrolment.form.error.cardNibble");
 	}
 
 	@Override
 	public void perform(final Enrolment object) {
 		assert object != null;
+
+		if (object.getCardHolder().trim() == "")
+			object.setCardHolder(null);
+
+		if (object.getCardNibble().trim() == "")
+			object.setCardNibble(null);
 
 		this.repository.save(object);
 	}
@@ -116,7 +122,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		finalised = object.getCardHolder() != null && object.getCardNibble() != null ? true : false;
+		finalised = object.getCardHolder().trim() != "" && object.getCardNibble().trim() != "" ? true : false;
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
 		tuple.put("finalised", finalised);
