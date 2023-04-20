@@ -41,11 +41,12 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 	@Override
 	public void load() {
 		Collection<PracticumSession> objects;
-		int id;
+		int masterId;
 
-		id = super.getRequest().getData("id", int.class);
-		objects = this.repository.findAllSessionByPracticumId(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		objects = this.repository.findAllSessionByPracticumId(masterId);
 
+		super.getResponse().setGlobal("masterId", masterId);
 		super.getBuffer().setData(objects);
 	}
 

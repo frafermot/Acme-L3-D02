@@ -17,3 +17,5 @@ company.practicum.form.button.update = Update
 company.practicum.form.button.delete = Delete
 company.practicum.form.button.publish = Publish
 company.practicum.form.button.sessions = Sessions
+
+company.practicum.form.error.duplicated = This code already used
