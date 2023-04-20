@@ -29,4 +29,7 @@ public interface CompanyPracticumRepository extends AbstractRepository {
 
 	@Query("select u from UserAccount u where u.id = :id")
 	UserAccount findUserById(int id);
+
+	@Query("select c from Course c where c.id = :id")
+	Course findCourseById(int id);
 }

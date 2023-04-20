@@ -65,7 +65,7 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses().stream().filter(x -> !x.getIndicator().equals(Indication.THEORETICAL)).collect(Collectors.toList());
-		choice = SelectChoices.from(courses, "code", object.getCourse());
+		choice = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company", "course");
 		tuple.put("courses", choice);

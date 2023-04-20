@@ -52,8 +52,14 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	@Override
 	public void bind(final Practicum object) {
 		assert object != null;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourseById(courseId);
 
 		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "course");
+		object.setCourse(course);
 	}
 
 	@Override
