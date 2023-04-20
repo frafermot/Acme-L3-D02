@@ -1,12 +1,15 @@
 
 package acme.features.auditor.audit;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.course.Course;
 import acme.enums.Mark;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -63,7 +66,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	public void bind(final Audit object) {
 		assert object != null;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published", "course");
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published");
 	}
 
 	@Override
@@ -98,12 +101,25 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 		assert object != null;
 
 		SelectChoices marks;
+		final SelectChoices courses2;
 		Tuple tuple;
+		Collection<Course> courses;
 
 		marks = SelectChoices.from(Mark.class, object.getMark());
 
+		courses = this.repository.findAllCourses();
+
+		final List<Course> auditsCourse = this.repository.findAllCoursesFromAudit();
+
+		courses.removeAll(auditsCourse);
+
+		courses.add(object.getCourse());
+
+		courses2 = SelectChoices.from(courses, "title", object.getCourse());
+
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published", "course");
 		tuple.put("marks", marks);
+		tuple.put("courses", courses2);
 
 		super.getResponse().setData(tuple);
 	}
