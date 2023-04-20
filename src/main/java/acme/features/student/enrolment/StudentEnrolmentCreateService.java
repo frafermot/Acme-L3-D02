@@ -70,11 +70,8 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	public void validate(final Enrolment object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Collection<String> enrolments;
-			enrolments = this.repository.findAllEnrolmentsCodes();
-			super.state(!enrolments.stream().anyMatch(c -> c == object.getCode()), "code", "student.enrolment.form.error.code");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(this.repository.findCode(object.getCode()) == null, "code", "student.enrolment.form.error.code");
 
 		if (!super.getBuffer().getErrors().hasErrors("cardHolder"))
 			super.state(object.getCardHolder() == "" || object.getCardHolder().trim().length() > 0, "cardHolder", "student.enrolment.form.error.cardHolder");

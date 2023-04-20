@@ -4,6 +4,7 @@ package acme.features.student.enrolment;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.course.Course;
@@ -19,6 +20,9 @@ public interface StudentEnrolmentRepository extends AbstractRepository {
 
 	//@Query("select e from Enrolment e where e.code = :code")
 	//Enrolment findOneEnrolmentByCode(String code);
+
+	@Query("select e.code from Enrolment e where e.code = :code")
+	String findCode(@Param("code") String code);
 
 	@Query("select e.code from Enrolment e")
 	Collection<String> findAllEnrolmentsCodes();
