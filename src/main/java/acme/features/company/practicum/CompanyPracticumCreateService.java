@@ -81,6 +81,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 
 		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company", "course");
 		tuple.put("courses", choice);
+		tuple.put("company", object.getCompany().getName());
 
 		super.getResponse().setData(tuple);
 	}

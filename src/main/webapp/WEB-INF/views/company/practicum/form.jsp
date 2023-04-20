@@ -5,16 +5,18 @@
 
 <acme:form>
 	<acme:input-textbox code="company.practicum.form.label.code" path="code"/>	
-	<acme:input-textbox code="company.practicum.form.label.title" path="title"/>
+	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textarea code="company.practicum.form.label.practicumAbstract" path="practicumAbstract"/>
 	<acme:input-textarea code="company.practicum.form.label.goals" path="goals"/>
-	<acme:input-textbox code="company.practicum.form.label.estimatedTotalTime" path="estimatedTotalTime" readonly="true"/>
+	<acme:input-textbox code="company.practicum.form.label.estimatedTotalTime" path="estimatedTotalTime"/>
 	<acme:input-textbox code="company.practicum.form.label.company" path="company" readonly="true"/>
 	<acme:input-select code="company.practicum.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-checkbox code="company.practicum.form.label.published" path="published"/>
 	
+	
+	
 	<jstl:choose>
-		<jstl:when test="${ _command == 'create'}">
+		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="company.practicum.form.button.create" action="/company/practicum/create"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
