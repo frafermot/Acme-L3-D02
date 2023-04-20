@@ -58,7 +58,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findCourseById(courseId);
 
-		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "course");
+		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published");
 		object.setCourse(course);
 	}
 
@@ -78,15 +78,16 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	public void unbind(final Practicum object) {
 		assert object != null;
 
-		SelectChoices choice;
-		Collection<Course> courses;
-		Tuple tuple;
+		final SelectChoices choice;
+		final Collection<Course> courses;
+		final Tuple tuple;
 
 		courses = this.repository.findAllCourses().stream().filter(x -> !x.getIndicator().equals(Indication.THEORETICAL)).collect(Collectors.toList());
 		choice = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company", "course");
+		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company");
 		tuple.put("courses", choice);
+		tuple.put("course", choice.getSelected().getKey());
 		tuple.put("company", object.getCompany().getName());
 
 		super.getResponse().setData(tuple);
