@@ -1,34 +1,27 @@
 
-package acme.features.company.practicum;
+package acme.features.company.practicumSession;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.course.Course;
 import acme.entities.practicum.Practicum;
-import acme.enums.Indication;
-import acme.framework.components.jsp.SelectChoices;
+import acme.entities.practicumSession.PracticumSession;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class CompanyPracticumShowService extends AbstractService<Company, Practicum> {
+public class CompanyPracticumSessionListService extends AbstractService<Company, PracticumSession> {
 
 	@Autowired
-	protected CompanyPracticumRepository repository;
+	protected CompanyPracticumSessionRepository repository;
 
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
@@ -47,29 +40,25 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 
 	@Override
 	public void load() {
-		Practicum object;
+		Collection<PracticumSession> objects;
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findPracticumById(id);
+		objects = this.repository.findAllSessionByPracticumId(id);
 
-		super.getBuffer().setData(object);
+		super.getBuffer().setData(objects);
 	}
 
 	@Override
-	public void unbind(final Practicum object) {
+	public void unbind(final PracticumSession object) {
 		assert object != null;
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
 
-		SelectChoices choice;
-		Collection<Course> courses;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses().stream().filter(x -> !x.getIndicator().equals(Indication.THEORETICAL)).collect(Collectors.toList());
-		choice = SelectChoices.from(courses, "code", object.getCourse());
-
-		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company", "course");
-		tuple.put("courses", choice);
-
+		tuple = super.unbind(object, "title", "periodStart", "periodEnd", "published");
+		super.getResponse().setGlobal("masterId", masterId);
 		super.getResponse().setData(tuple);
 	}
 }
