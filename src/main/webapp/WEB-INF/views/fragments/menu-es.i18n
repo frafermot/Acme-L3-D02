@@ -42,17 +42,20 @@ master.menu.assistant = Asistente
 master.menu.assistant.tutorial.list-all = Listar Tutoriales
 master.menu.assistant.tutorial.list-mine = Listar mis Tutoriales
 master.menu.assistant.session.list-all = Listar Sesiones
+master.menu.assistant.dashboard = Panel
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.system-configuration = Configuración del Sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.offer.list = Ver ofertas
 master.menu.administrator.bulletin.create = Crear boletines
+master.menu.administrator.banner.list = Listar banners
 
 # master.menu.lecturer ########################################################
 
@@ -74,6 +77,13 @@ master.menu.anonymous.favourite-link-jaime = 29500154D:Garcia Garcia, Jaime
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.student ##########################################################
+
+master.menu.student = Estudiante
+master.menu.student.course.list = Ver cursos
+master.menu.student.enrolment.list-mine = Mis matrículas
+master.menu.student.activity.list-mine = Mis actividades
 
 # master.menu.assistant ##########################################################
 

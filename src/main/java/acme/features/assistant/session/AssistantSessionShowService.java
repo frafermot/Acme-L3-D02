@@ -1,10 +1,13 @@
 
 package acme.features.assistant.session;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.session.Session;
+import acme.entities.tutorial.Tutorial;
 import acme.enums.Indication;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
@@ -41,12 +44,16 @@ public class AssistantSessionShowService extends AbstractService<Assistant, Sess
 		final boolean status;
 		int id;
 		Session session;
+		Tutorial tutorial;
+		Collection<Tutorial> myTutorials;
 		Principal principal;
 
 		id = super.getRequest().getData("id", int.class);
 		principal = super.getRequest().getPrincipal();
 		session = this.repository.findSessionById(id);
-		status = session != null && principal.hasRole(Assistant.class);
+		tutorial = session.getTutorial();
+		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
+		status = tutorial != null && tutorial.isPublished() && myTutorials.contains(tutorial) && session != null && principal.hasRole(Assistant.class);
 
 		super.getResponse().setAuthorised(status);
 	}

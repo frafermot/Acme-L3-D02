@@ -19,14 +19,14 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 	@Query("SELECT t FROM Tutorial t WHERE t.id = :id")
 	Tutorial findTutorialById(int id);
 
-	@Query("SELECT t FROM Tutorial t JOIN t.course c WHERE c.published = true")
+	@Query("SELECT t FROM Tutorial t JOIN t.course c WHERE t.published = true AND c.published = true")
 	Collection<Tutorial> findAccessibleTutorials();
 
 	@Query("SELECT u FROM UserAccount u WHERE u.id = :id")
 	UserAccount findUserAccountById(int id);
 
-	@Query("SELECT c FROM Course c")
-	Collection<Course> findAllCourses();
+	@Query("SELECT c FROM Course c WHERE c.published = true")
+	Collection<Course> findAccessibleCourses();
 
 	@Query("SELECT c FROM Course c WHERE c.id = :id")
 	Course findCourseById(int id);
@@ -46,8 +46,8 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 	@Query("SELECT t FROM Tutorial t WHERE t.assistant.id = :id")
 	Collection<Tutorial> findTutorialsByAssistantId(int id);
 
-	@Query("SELECT COUNT(t) = 0 FROM Tutorial t JOIN t.course c WHERE c.id = :id")
-	boolean checkEmptyCourseById(int id);
+	@Query("SELECT COUNT(c) = 1 FROM Course c WHERE c.id = :id AND c.published = true")
+	boolean checkAvailableCourseById(int id);
 
 	@Query("SELECT COUNT(t) = 1 FROM Tutorial t JOIN t.course c WHERE c.id = :courseId AND t.id = :tutorialId")
 	boolean checkSameCourseById(int courseId, int tutorialId);

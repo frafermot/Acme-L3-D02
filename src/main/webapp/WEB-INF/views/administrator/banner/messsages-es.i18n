@@ -1,0 +1,19 @@
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.periodStart = Inicio
+administrator.banner.list.label.periodEnd = Fin
+administrator.banner.list.label.instantiationUpdateMoment = Actualizado
+administrator.banner.list.button.create = Crear
+
+administrator.banner.form.label.slogan = Slogan:
+administrator.banner.form.label.periodStart = Inicio:
+administrator.banner.form.label.periodEnd = Fin:
+administrator.banner.form.label.linkPicture = Link de la imagen:
+administrator.banner.form.label.linkTarget = Link de destino:
+administrator.banner.form.label.instantiationUpdateMoment = Actualizado:
+
+administrator.banner.form.button.create = Crear
+administrator.banner.form.button.update = Actualizar
+administrator.banner.form.button.delete = Eliminar
+
+administrator.banner.form.error.periodStart = La fecha de inicio debe ser posterior al momento de instanciación/actualización
+administrator.banner.form.error.periodEnd = La fecha de finalización debe ser al menos una semana posterior a la fecha de inicio.

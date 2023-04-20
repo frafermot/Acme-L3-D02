@@ -72,6 +72,9 @@ public class AdministratorOfferCreateService extends AbstractService<Administrat
 			super.state(MomentHelper.isAfterOrEqual(object.getPeriodEnd(), minEnd), "periodEnd", "administrator.offer.form.error.periodend");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(object.getPrice().getAmount() > 0, "price", "administrator.offer.form.error.price");
+
 	}
 
 	@Override

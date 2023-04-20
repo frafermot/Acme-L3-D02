@@ -1,10 +1,11 @@
 key,title,sessionAbstract,indication,periodStart,periodEnd,link,key:tutorial,published
-session-01,title1                                                  75-characters-test,abstract1,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-01,true
-session-02,t,abstract2                                                                        75-characters-test,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-02,false
-session-03,012,abstract3,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,https://www.example.com,tutorial-03,true
-session-04,title4,a,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-04,false
-session-05,abc0234,abstract5,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,,tutorial-05,false
-session-06,title6,abstract6,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-06,false
-session-07,title7,7a,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-07,false
-session-08,title8,897,HANDS_ON,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-08,false
-session-09,0,abstract9,THEORETICAL,2025/08/09 10:00,2025/08/10 10:00,http://www.example.com,tutorial-09,false
+session-01,Introducción a la programación en Python,Conceptos básicos de Python para principiantes,THEORETICAL,2025/09/01 10:00,2025/09/01 11:00,https://www.example1.com,tutorial-01,true
+session-02,Variables y estructuras de control en Python,Aprende a utilizar variables y estructuras de control en Python,HANDS_ON,2025/09/02 14:00,2025/09/02 16:00,https://www.example2.com,tutorial-01,false
+session-03,Creación de proyectos Django,Introducción a la creación de proyectos Django,THEORETICAL,2025/09/03 09:00,2025/09/03 10:00,https://www.example3.com,tutorial-03,true
+session-04,Desarrollo de apps Django,Construcción de aplicaciones Django paso a paso,HANDS_ON,2025/09/04 13:00,2025/09/04 16:00,https://www.example4.com,tutorial-03,false
+session-05,Algoritmos de Inteligencia Artificial,Explicación de algoritmos comunes de IA,THEORETICAL,2025/09/05 15:00,2025/09/05 17:00,https://www.example5.com,tutorial-05,true
+session-06,Implementación de algoritmos IA en Python,Desarrollo de algoritmos de IA en Python,HANDS_ON,2025/09/06 10:00,2025/09/06 13:00,https://www.example6.com,tutorial-05,false
+session-07,Introducción a la visualización de datos con R,Conceptos básicos de visualización de datos en R,THEORETICAL,2025/09/07 11:00,2025/09/07 12:00,https://www.example7.com,tutorial-07,true
+session-08,Gráficos interactivos con R,Creación de gráficos interactivos en R,HANDS_ON,2025/09/08 14:00,2025/09/08 16:00,https://www.example8.com,tutorial-07,false
+session-09,Node.js y módulos NPM,Introducción a Node.js y cómo utilizar módulos NPM,THEORETICAL,2025/09/09 09:00,2025/09/09 10:00,https://www.example9.com,tutorial-09,true
+session-10,Desarrollo de aplicaciones web con Node.js,Construye aplicaciones web desde cero con Node.js,HANDS_ON,2025/09/10 10:00,2025/09/10 12:00,https://www.example10.com,tutorial-09,false

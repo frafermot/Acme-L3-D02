@@ -18,5 +18,6 @@ administrator.offer.form.button.update = Actualizar
 administrator.offer.form.button.delete = Borrar
 administrator.offer.form.button.create = Crear
 
+administrator.offer.form.error.price = El precio debe ser positivo
 administrator.offer.form.error.periodstart = La oferta debe comenzar al menos un día después de que se añada
 administrator.offer.form.error.periodend = La oferta debe durar al menos una semana

@@ -25,7 +25,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-linkAntonio" action="http://www.youtube.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.juaramlop2" action="http://www.spotify.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-linkAlejandro" action="https://www.stackoverflow.com/"/>
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.course.list" action="/any/course/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.peep.list" action="/any/peep/list"/>
 		</acme:menu-option>
@@ -41,14 +40,19 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
+			<acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/show"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.assistant.tutorial.list-mine" action="/assistant/tutorial/list-mine"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.offer.list" action="/administrator/offer/list"/>
 			<acme:menu-suboption code="master.menu.administrator.bulletin.create" action="/administrator/bulletin/create"/>
+			<acme:menu-suboption code="master.menu.administrator.banner.list" action="/administrator/banner/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
@@ -70,6 +74,12 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
+			<acme:menu-suboption code="master.menu.student.course.list" action="/student/course/list"/>
+			<acme:menu-suboption code="master.menu.student.enrolment.list-mine" action="/student/enrolment/list-mine"/>
+			<acme:menu-suboption code="master.menu.student.activity.list-mine" action="/student/activity/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

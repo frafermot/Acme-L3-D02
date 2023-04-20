@@ -1,6 +1,10 @@
 
 package acme.features.assistant.session;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Collection;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +14,7 @@ import acme.enums.Indication;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -40,12 +45,14 @@ public class AssistantSessionCreateService extends AbstractService<Assistant, Se
 		boolean status;
 		int tutorialId;
 		Tutorial tutorial;
+		Collection<Tutorial> myTutorials;
 		Principal principal;
 
 		principal = super.getRequest().getPrincipal();
 		tutorialId = super.getRequest().getData("masterId", int.class);
 		tutorial = this.repository.findTutorialById(tutorialId);
-		status = tutorial != null && tutorial.isPublished() && principal.hasRole(Assistant.class);
+		myTutorials = this.repository.findTutorialsByAssistantId(principal.getActiveRoleId());
+		status = tutorial != null && tutorial.isPublished() && principal.hasRole(Assistant.class) && myTutorials.contains(tutorial);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -75,6 +82,22 @@ public class AssistantSessionCreateService extends AbstractService<Assistant, Se
 	@Override
 	public void validate(final Session object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("periodStart")) {
+			Date minStart;
+
+			minStart = MomentHelper.deltaFromMoment(MomentHelper.getCurrentMoment(), 1, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfterOrEqual(object.getPeriodStart(), minStart), "periodStart", "assistant.session.form.error.periodStart");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("periodEnd")) {
+			Date minEnd;
+			Date maxEnd;
+
+			minEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 1, ChronoUnit.HOURS);
+			maxEnd = MomentHelper.deltaFromMoment(object.getPeriodStart(), 5, ChronoUnit.HOURS);
+			super.state(MomentHelper.isAfterOrEqual(object.getPeriodEnd(), minEnd) && MomentHelper.isBeforeOrEqual(object.getPeriodEnd(), maxEnd), "periodEnd", "assistant.session.form.error.periodEnd");
+		}
 	}
 
 	@Override

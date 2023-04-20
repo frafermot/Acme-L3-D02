@@ -1,10 +1,11 @@
 key,code,title,tutorialAbstract,goals,estimatedTime,key:course,key:assistant,published
-tutorial-01,ABC1234,title1,a,g1,1,course-01,assistant-01,true
-tutorial-02,COD2345,title2                                                  75-characters-test,abstract2,goal2,83,course-02,assistant-02,true
-tutorial-03,COD3456,t3,abstract3                                                                       100-characters-test,goal3,7,course-03,assistant-03,true
-tutorial-04,Z0567,title4,abstract4,goal4                                                                           100-characters-test,155,course-04,assistant-02,true
-tutorial-05,COD5678,t,abstract5,g,1000,course-05,assistant-01,true
-tutorial-06,CO0789,6543,abstract6,6,990,course-06,assistant-02,true
-tutorial-07,C6780,title7,7a,goal7,2,course-07,assistant-03,true
-tutorial-08,Z2089,8,abstract8,goal8,10,course-08,assistant-02,true
-tutorial-09,A9012,title9,9,goal9,10,course-09,assistant-01,true
+tutorial-01,A1001,Introducción a Python,Principios básicos de la programación en Python para principiantes,Entender sintaxis"," variables y estructuras de control,60,course-01,assistant-01,true
+tutorial-02,BY2002,Desarrollo web con Django,Aprende a crear aplicaciones web con Django y Python,Crear proyectos y apps con Django,90,course-01,assistant-02,false
+tutorial-03,COI3003,Inteligencia Artificial,Conceptos fundamentales y aplicaciones de la Inteligencia Artificial,Comprender algoritmos y técnicas de IA,120,course-02,assistant-03,true
+tutorial-04,DAN4004,Análisis de datos con R,Introducción al análisis de datos y visualización con R,Manejar paquetes y gráficos en R,75,course-02,assistant-01,false
+tutorial-05,EL5005,JavaScript y Node.js,Desarrollo de aplicaciones web con JavaScript y Node.js,Entender Node.js y módulos de NPM,180,course-01,assistant-02,true
+tutorial-06,FE6006,Introducción a SQL,Aprende a gestionar bases de datos con SQL y sus principales comandos,Consultas y manipulación de datos,50,course-01,assistant-03,false
+tutorial-07,GO7007,Desarrollo móvil con React Native,Creación de aplicaciones móviles multiplataforma con React Native,Implementar componentes y navegación,210,course-01,assistant-01,true
+tutorial-08,HI8008,Programación funcional en Scala,Conceptos esenciales de la programación funcional con Scala,Comprender monadas y pattern matching,140,course-02,assistant-02,false
+tutorial-09,I9009,Diseño de interfaces con Figma,Principios de diseño de interfaces y prototipado con Figma,Diseñar interfaces y crear prototipos,45,course-01,assistant-03,true
+tutorial-10,JTZ1010,Desarrollo web con Ruby on Rails,Introducción al desarrollo de aplicaciones web con Ruby on Rails,Entender MVC y crear aplicaciones Rails,95,course-02,assistant-01,false

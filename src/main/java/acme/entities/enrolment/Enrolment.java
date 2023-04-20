@@ -42,6 +42,12 @@ public class Enrolment extends AbstractEntity {
 	@Min(0)
 	protected Double			workTime;
 
+	@Length(max = 75)
+	protected String			cardHolder;
+
+	@Length(max = 4)
+	protected String			cardNibble;
+
 	// Relationships
 
 	@NotNull
