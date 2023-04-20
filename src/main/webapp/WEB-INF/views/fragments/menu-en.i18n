@@ -32,6 +32,7 @@ master.menu.anonymous.peep.list = List Peeps
 master.menu.authenticated = Authenticated
 master.menu.authenticated.note.list = List Notes
 master.menu.authenticated.offer.list = List offers
+master.menu.authenticated.bulletin.list = List bulletins
 master.menu.anonymous.course.list = List Courses
 master.menu.anonymous.peep.list = List Peeps
 
@@ -51,11 +52,17 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.offer.list = List offers
+master.menu.administrator.bulletin.create = Create bulletins
 
 # master.menu.lecturer ########################################################
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course-list-mine = List my courses
+
+# master.menu.auditor ########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audit-list-mine = List my audits
 
 # master.menu.provider ########################################################
 
@@ -84,5 +91,7 @@ master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.lecturer = Lecturer data
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor = Auditor data
 master.menu.user-account.become-student = Become a student
 master.menu.user-account.student = Student data

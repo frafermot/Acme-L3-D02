@@ -1,0 +1,16 @@
+#list.jsp
+administrator.bulletin.list.label.title = Título
+administrator.bulletin.list.label.message = Mensaje
+administrator.bulletin.list.label.instantiationMoment = Fecha de creación
+
+administrator.bulletin.form.button.create = Crear boletín
+
+#form.jsp
+administrator.bulletin.form.label.instantiationMoment = Fecha de creación
+administrator.bulletin.form.label.title = Título
+administrator.bulletin.form.label.message = Mensaje
+administrator.bulletin.form.label.flag = Bandera
+administrator.bulletin.form.label.link = Link
+
+administrator.bulletin.form.label.confirmation = Confirmar
+administrator.bulletin.form.button.create = Crear

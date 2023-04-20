@@ -18,5 +18,6 @@ user-account-student-01,true,"UserIdentity{name: 'Luis', surname: 'Garcia', emai
 user-account-student-02,true,"UserIdentity{name: 'Samanta', surname: 'Rodriguez', email: 'student2@mail.com'}",student2,student2
 user-account-student-03,true,"UserIdentity{name: 'Alfredo', surname: 'Lopez', email: 'alfredo22@mail.com'}",alfredo22,alfredo1234
 user-account-student-04,false,"UserIdentity{name: 'Manuel', surname: 'Castillo', email: 'm4nu3l@mail.com'}",m4nu,manu1234
-user-account-auditor-01,false,"UserIdentity{name: 'Auditor1', surname: 'surname', email: 'auditor1@mail.com'}",auditor1,auditor1
-user-account-auditor-02,false,"UserIdentity{name: 'Auditor2', surname: 'surname', email: 'auditor2@mail.com'}",auditor2,auditor2
+user-account-auditor-01,true,"UserIdentity{name: 'Auditor1', surname: 'surname', email: 'auditor1@mail.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Auditor2', surname: 'surname', email: 'auditor2@mail.com'}",auditor2,auditor2
+user-account-auditor-03,true,"UserIdentity{name: 'Auditor3', surname: 'surname', email: 'auditor3@mail.com'}",auditor3,auditor3

@@ -46,8 +46,9 @@ public class Audit extends AbstractEntity {
 	@Length(max = 100)
 	protected String			weakPoints;
 
-	@NotNull
 	protected Mark				mark;
+
+	protected boolean			published;
 
 	@NotNull
 	@Valid
@@ -58,4 +59,5 @@ public class Audit extends AbstractEntity {
 	@Valid
 	@OneToOne(optional = false)
 	protected Course			course;
+
 }

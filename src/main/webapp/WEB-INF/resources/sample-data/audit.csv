@@ -1,4 +1,5 @@
-key,code,conclusion,strong-points,weak-points,mark,key:auditor,key:course
-audit-01,AB195,conclusion for audit 1 but with more characters 50,strongPoints for audit 1 but with 50 characters 50,W,B,auditor-01,course-01
-audit-02,AB273,C,strongPoint for audit 2 but with more characters ccccccccccccccccccccccccccccccccccccccccccccccc 100,weakPoints for audit 1 but with 50 characters   50,A_HIGH,auditor-02,course-02
-audit-03,ZE906,conclusion for audit 3 but with more characters cccccccccccccccccccccccccccccccccccccccccccccccc 100,S,weakPointsfor audit 3 but with more characters ccccccccccccccccccccccccccccccccccccccccccccccccc 100,A,auditor-01,course-03
+key,code,conclusion,strong-points,weak-points,mark,published,key:auditor,key:course
+audit-01,AB195,conclusion for audit 1 but with more characters 50,strongPoints for audit 1 but with 50 characters 50,W,B,true,auditor-01,course-01
+audit-02,AB273,C,strongPoint for audit 2 but with more characters ccccccccccccccccccccccccccccccccccccccccccccccc 100,weakPoints for audit 1 but with 50 characters   50,A_HIGH,true,auditor-02,course-02
+audit-03,ZE906,conclusion for audit 3 but with more characters cccccccccccccccccccccccccccccccccccccccccccccccc 100,S,weakPointsfor audit 3 but with more characters ccccccccccccccccccccccccccccccccccccccccccccccccc 100,A,true,auditor-01,course-03
+audit-04,WW906,conclusion for audit 4 but with more characters cccccccccccccccccccccccccccccccccccccccccccccccc 100,Y,weakPointsfor audit 4 but with more characters ccccccccccccccccccccccccccccccccccccccccccccccccc 100,A,false,auditor-02,course-04

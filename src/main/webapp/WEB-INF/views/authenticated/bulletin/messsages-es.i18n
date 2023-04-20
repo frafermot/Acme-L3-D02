@@ -1,0 +1,11 @@
+#list.jsp
+authenticated.bulletin.list.label.title = Título
+authenticated.bulletin.list.label.message = Mensaje
+authenticated.bulletin.list.label.instantiationMoment = Fecha de creación
+
+#form.jsp
+authenticated.bulletin.form.label.instantiationMoment = Fecha de creación
+authenticated.bulletin.form.label.title = Título
+authenticated.bulletin.form.label.message = Mensaje
+authenticated.bulletin.form.label.flag = Bandera
+authenticated.bulletin.form.label.link = Link
