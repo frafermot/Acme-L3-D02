@@ -27,7 +27,14 @@ public class AnyPeepShowService extends AbstractService<Any, Peep> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Peep object;
+		int id;
+		boolean status;
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findPeepById(id);
+		status = object != null;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -48,7 +55,6 @@ public class AnyPeepShowService extends AbstractService<Any, Peep> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "instantiationMoment", "message", "link", "nick", "email");
-		tuple.put("readOnly", true);
 
 		super.getResponse().setData(tuple);
 	}

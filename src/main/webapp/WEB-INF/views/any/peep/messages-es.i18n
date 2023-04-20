@@ -1,10 +1,10 @@
 any.peep.list.label.title = Título
 any.peep.list.label.instantiationMoment = Momento
-any.peep.list.label.author = Nick
+any.peep.list.label.nick = Nick
 
-any.peep.label.title = Título
-any.peep.label.instantiationMoment = Momento
-any.peep.label.message = Mensaje
+any.peep.form.label.title = Título
+any.peep.form.label.instantiationMoment = Momento
+any.peep.form.label.message = Mensaje
 any.peep.form.label.link = Link
 any.peep.form.label.email = Correo
 any.peep.form.label.nick = Nick

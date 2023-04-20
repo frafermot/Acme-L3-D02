@@ -1,0 +1,19 @@
+company.practicum.list.label.code = Codigo
+company.practicum.list.label.title = Titulo
+company.practicum.list.label.estimatedTotalTime = Tiempo Total Estimado
+company.practicum.list.label.published = Publicado
+
+company.practicum.form.label.code = Codigo
+company.practicum.form.label.title = Titulo
+company.practicum.form.label.practicumAbstract = Resumen
+company.practicum.form.label.goals = Objetivos
+company.practicum.form.label.estimatedTotalTime = Tiempo Total Estimado
+company.practicum.form.label.company = Compañia
+company.practicum.form.label.course = Curso
+company.practicum.form.label.published = Publicado
+
+company.practicum.form.button.create = Crear
+company.practicum.form.button.update = Actualizar
+company.practicum.form.button.delete = Eliminar
+company.practicum.form.button.publish = Publicar
+company.practicum.form.button.sessions = Sesiones
