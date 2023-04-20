@@ -60,6 +60,7 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
+		System.out.println(this.repository.findAllEnrolmentsCodes());
 
 		super.bind(object, "code", "motivation", "goals", "workTime", "cardHolder", "cardNibble");
 		object.setCourse(course);
@@ -68,6 +69,22 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 	@Override
 	public void validate(final Enrolment object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Collection<String> enrolments;
+			enrolments = this.repository.findAllEnrolmentsCodes();
+			super.state(enrolments.stream().anyMatch(c -> c == object.getCode()), "code", "student.enrolment.form.error.code");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("cardHolder"))
+			super.state(object.getCardHolder().trim() == "", "cardHolder", "student.enrolment.form.error.cardHolder");
+
+		if (!super.getBuffer().getErrors().hasErrors("cardHolder"))
+			super.state(object.getCardHolder().trim() == "", "cardHolder", "student.enrolment.form.error.cardHolder");
+
+		if (!super.getBuffer().getErrors().hasErrors("cardNibble"))
+			super.state(!object.getCardNibble().matches("^[0-9]{4}$") && object.getCardNibble() != null, "cardNibble", "student.enrolment.form.error.cardNibble");
+
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import acme.entities.enrolment.Enrolment;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -48,19 +49,23 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	public void bind(final Activity object) {
 		assert object != null;
 
-		int enrolmentId;
+		Integer enrolmentId;
 		Enrolment enrolment;
 
-		enrolmentId = super.getRequest().getData("enrolment", int.class);
-		enrolment = this.repository.findOneEnrolmentById(enrolmentId);
+		enrolmentId = super.getRequest().getData("enrolment", Integer.class);
+		enrolment = enrolmentId != null ? this.repository.findOneEnrolmentById(enrolmentId) : null;
 
 		super.bind(object, "title", "activityAbstract", "indicator", "periodStart", "periodEnd", "link");
 		object.setEnrolment(enrolment);
+
 	}
 
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("periodEnd"))
+			super.state(MomentHelper.isAfter(object.getPeriodEnd(), object.getPeriodStart()), "periodEnd", "student.activity.form.error.periodEnd");
 	}
 
 	@Override

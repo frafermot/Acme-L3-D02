@@ -13,3 +13,7 @@ student.enrolment.form.label.finalised = Finalizada
 student.enrolment.form.button.update = Actualizar
 student.enrolment.form.button.delete = Borrar
 student.enrolment.form.button.create = Registrar matrícula
+
+student.enrolment.form.error.cardNibble = Este dato no es válido
+student.enrolment.form.error.cardHolder = Este titular no es válido
+student.enrolment.form.error.code = Ya existe una matrícula con este código

@@ -12,3 +12,5 @@ student.activity.form.label.enrolment-code = Matrícula a la que pertenece
 student.activity.form.button.update = Actualizar
 student.activity.form.button.delete = Borrar
 student.activity.form.button.create = Registrar actividad
+
+student.activity.form.error.periodEnd = El final de la actividad debe ser posterior a su inicio

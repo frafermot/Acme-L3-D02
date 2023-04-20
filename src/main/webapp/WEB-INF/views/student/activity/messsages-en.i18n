@@ -12,3 +12,5 @@ student.activity.form.label.enrolment-code = Enrolment to which it belongs
 student.activity.form.button.update = Update
 student.activity.form.button.delete = Delete
 student.activity.form.button.create = Register activity
+
+student.activity.form.error.periodEnd = The end of the activity must be after its start
