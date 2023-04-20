@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
-import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
@@ -14,7 +13,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class AuthenticatedCompanyCreateService extends AbstractService<Authenticated, Company> {
+public class AuthenticatedCompanyUpdateService extends AbstractService<Authenticated, Company> {
 
 	@Autowired
 	protected AuthenticatedCompanyRepository repository;
@@ -22,11 +21,7 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = !super.getRequest().getPrincipal().hasRole(Company.class);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -39,14 +34,10 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 		Company object;
 		Principal principal;
 		int userAccountId;
-		UserAccount userAccount;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findUserAccountById(userAccountId);
-
-		object = new Company();
-		object.setUserAccount(userAccount);
+		object = this.repository.findCompanyByUserAccountId(userAccountId);
 
 		super.getBuffer().setData(object);
 	}
@@ -72,6 +63,8 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 
 	@Override
 	public void unbind(final Company object) {
+		assert object != null;
+
 		Tuple tuple;
 
 		tuple = super.unbind(object, "name", "vatNumber", "summary", "link");
