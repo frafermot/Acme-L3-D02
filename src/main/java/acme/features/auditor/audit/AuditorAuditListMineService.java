@@ -51,7 +51,7 @@ public class AuditorAuditListMineService extends AbstractService<Auditor, Audit>
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "published");
-
+		tuple.put("course", object.getCourse().getTitle());
 		super.getResponse().setData(tuple);
 	}
 

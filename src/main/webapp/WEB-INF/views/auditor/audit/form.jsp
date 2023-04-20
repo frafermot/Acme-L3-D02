@@ -10,8 +10,8 @@
 	<acme:input-textarea code="auditor.audit.form.label.strongPoints" path="strongPoints"/>
 	<acme:input-textarea code="auditor.audit.form.label.weakPoints" path="weakPoints"/>
 	<acme:input-select code="auditor.audit.form.label.mark" path="mark" choices="${marks}"/>
-	<acme:input-checkbox code="auditor.audit.form.label.published" path="published"/>
 	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>
+	<acme:input-checkbox code="auditor.audit.form.label.published" path="published"/>
 
 	<jstl:choose>
 		<jstl:when test="${_command == 'create'}">

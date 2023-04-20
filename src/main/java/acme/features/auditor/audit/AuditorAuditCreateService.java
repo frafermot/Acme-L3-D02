@@ -56,11 +56,15 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void bind(final Audit object) {
 		assert object != null;
+		int courseId;
+		Course course;
 
-		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published", "course");
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourse(courseId);
 
-		final Course course = this.repository.findCourse(super.getRequest().getData("id", int.class));
+		super.bind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published");
 		object.setCourse(course);
+
 	}
 
 	@Override
@@ -102,7 +106,7 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 
 		marks = SelectChoices.from(Mark.class, object.getMark());
 
-		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published", "course");
+		tuple = super.unbind(object, "code", "conclusion", "strongPoints", "weakPoints", "mark", "published");
 		tuple.put("marks", marks);
 
 		courses = this.repository.findAllCourses();
