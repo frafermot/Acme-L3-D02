@@ -1,0 +1,19 @@
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.periodStart = Period Start
+administrator.banner.list.label.periodEnd = Period End
+administrator.banner.list.label.instantiationUpdateMoment = Updated
+administrator.banner.list.button.create = Create
+
+administrator.banner.form.label.slogan = Slogan:
+administrator.banner.form.label.periodStart = Period Start:
+administrator.banner.form.label.periodEnd = Period End:
+administrator.banner.form.label.linkPicture = Picture link:
+administrator.banner.form.label.linkTarget = Destination link:
+administrator.banner.form.label.instantiationUpdateMoment = Updated:
+
+administrator.banner.form.button.create = Create
+administrator.banner.form.button.update = Update
+administrator.banner.form.button.delete = Delete
+
+administrator.banner.form.error.periodStart = The start date must be after instantiation/update time
+administrator.banner.form.error.periodEnd = The end date must be at least one week after the start date
