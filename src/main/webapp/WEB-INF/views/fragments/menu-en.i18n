@@ -68,6 +68,13 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.student ##########################################################
+
+master.menu.student = Student
+master.menu.student.course.list = List courses
+master.menu.student.enrolment.list-mine = My enrolments
+master.menu.student.activity.list-mine = My activities
+
 # master.menu.assistant ##########################################################
 
 master.menu.assistant = Assistant

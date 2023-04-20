@@ -1,0 +1,19 @@
+student.enrolment.list.label.code = Code
+student.enrolment.list.label.finalised = Finalised
+
+student.enrolment.form.label.code = Code
+student.enrolment.form.label.motivation = Motivation
+student.enrolment.form.label.goals = Goals
+student.enrolment.form.label.workTime = Work time
+student.enrolment.form.label.course = Course
+student.enrolment.form.label.cardHolder = Credit card holder
+student.enrolment.form.label.cardNibble = Last 4 digits of credit card
+student.enrolment.form.label.finalised = Finalised
+
+student.enrolment.form.button.update = Update
+student.enrolment.form.button.delete = Delete
+student.enrolment.form.button.create = Register enrolment
+
+student.enrolment.form.error.cardNibble = This is not a valid number
+student.enrolment.form.error.cardHolder = This is not a valid holder
+student.enrolment.form.error.code = An enrolment with this code already exists
