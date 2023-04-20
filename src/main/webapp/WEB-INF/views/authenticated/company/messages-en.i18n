@@ -1,0 +1,6 @@
+authenticated.company.form.label.name = Name
+authenticated.company.form.label.vatNumber = VAT Number
+authenticated.company.form.label.summary = Summary
+authenticated.company.form.label.link = Link
+	
+authenticated.company.form.button.create = Create
