@@ -65,7 +65,7 @@ master.menu.lecturer.course-list-mine = Listar mis cursos
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor
-master.menu.lecturer.course-list-mine = Listar mis auditorías
+master.menu.auditor.audit-list-mine = Listar mis auditorías
 
 # master.menu.provider ########################################################
 
