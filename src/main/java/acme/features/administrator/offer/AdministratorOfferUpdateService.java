@@ -75,7 +75,7 @@ public class AdministratorOfferUpdateService extends AbstractService<Administrat
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("price"))
-			super.state(object.getPrice().getAmount() > 0, "price", "administrator.offer.form.error.price");
+			super.state(object.getPrice().getAmount() >= 0, "price", "administrator.offer.form.error.price");
 
 	}
 
