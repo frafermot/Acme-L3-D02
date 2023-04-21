@@ -18,3 +18,6 @@ company.practicumSession.form.button.session = Sesiones
 company.practicumSession.form.button.update = Actualizar
 company.practicumSession.form.button.delete = Eliminar
 company.practicumSession.form.button.publish = Publicar
+
+company.practicumSession.form.error.periodStart = La fecha de inicio debe ser al menos una semana después del momento actual
+company.practicumSession.form.error.periodEnd = La fecha de fin debe ser al menos una semana después de la fecha de inicio

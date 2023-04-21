@@ -115,6 +115,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 
 		tuple = super.unbind(object, "title", "sessionAbstract", "periodStart", "periodEnd", "link", "published");
 		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
+		tuple.put("practicum", object.getPracticum().getTitle());
 
 		super.getResponse().setData(tuple);
 	}
