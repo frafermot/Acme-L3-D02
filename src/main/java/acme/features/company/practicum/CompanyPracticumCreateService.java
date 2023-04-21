@@ -92,7 +92,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		final Collection<Course> courses;
 		final Tuple tuple;
 
-		courses = this.repository.findAllCourses().stream().filter(x -> !x.getIndicator().equals(Indication.THEORETICAL)).collect(Collectors.toList());
+		courses = this.repository.findAllCourses().stream().filter(x -> x.getIndicator().equals(Indication.HANDS_ON)).collect(Collectors.toList());
 		choice = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company");

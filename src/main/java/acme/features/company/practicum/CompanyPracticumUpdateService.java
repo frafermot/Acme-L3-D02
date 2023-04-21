@@ -60,8 +60,14 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Override
 	public void bind(final Practicum object) {
 		assert object != null;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourseById(courseId);
 
 		super.bind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published");
+		object.setCourse(course);
 	}
 
 	@Override
@@ -72,8 +78,7 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 			Optional<Practicum> optPracticum;
 
 			optPracticum = this.repository.findPracticumByCode(object.getCode());
-			if (optPracticum.isPresent())
-				super.state(optPracticum == null, "code", "company.practicum.form.error.duplicated");
+			super.state(!optPracticum.isPresent() || optPracticum.get().getId() == object.getId(), "code", "company.practicum.form.error.duplicated");
 
 		}
 	}
@@ -93,7 +98,7 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 		final Collection<Course> courses;
 		final Tuple tuple;
 
-		courses = this.repository.findAllCourses().stream().filter(x -> !x.getIndicator().equals(Indication.THEORETICAL)).collect(Collectors.toList());
+		courses = this.repository.findAllCourses().stream().filter(x -> x.getIndicator().equals(Indication.HANDS_ON)).collect(Collectors.toList());
 		choice = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "title", "practicumAbstract", "goals", "estimatedTotalTime", "published", "company");
