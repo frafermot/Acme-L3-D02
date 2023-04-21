@@ -19,3 +19,4 @@ company.practicum.form.button.publish = Publicar
 company.practicum.form.button.sessions = Sesiones
 
 company.practicum.form.error.duplicated = Este código ya está en uso
+company.practicum.form.error.allPublished = Hay sesiones no publicadas

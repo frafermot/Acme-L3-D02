@@ -76,6 +76,8 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void validate(final Practicum object) {
 		assert object != null;
 
+		final Collection<PracticumSession> sessions = this.repository.findAllSessionByPracticumId(object.getId());
+
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Optional<Practicum> optPracticum;
 
@@ -83,6 +85,8 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 			super.state(!optPracticum.isPresent() || optPracticum.get().getId() == object.getId(), "code", "company.practicum.form.error.duplicated");
 
 		}
+
+		super.state(sessions.stream().map(PracticumSession::isPublished).allMatch(x -> x), "published", "company.practicum.form.error.allPublished");
 	}
 
 	@Override
