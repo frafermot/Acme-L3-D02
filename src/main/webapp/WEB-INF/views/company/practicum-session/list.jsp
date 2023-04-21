@@ -12,3 +12,6 @@
 <jstl:if test="${masterPublished == false}">
 <acme:button code="company.practicumSession.list.button.create" action="/company/practicum-session/create?masterId=${masterId}"/>
 </jstl:if>
+<jstl:if test="${addendumAvailable == true && masterPublished == true}">
+<acme:button code="company.practicumSession.list.button.create" action="/company/practicum-session/create?masterId=${masterId}"/>
+</jstl:if>
