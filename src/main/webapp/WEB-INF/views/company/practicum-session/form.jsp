@@ -8,7 +8,7 @@
 	<acme:input-textarea code="company.practicumSession.form.label.sessionAbstract" path="sessionAbstract"/>
 	<acme:input-moment code="company.practicumSession.form.label.periodStart" path="periodStart"/>
 	<acme:input-moment code="company.practicumSession.form.label.periodEnd" path="periodEnd"/>
-	<acme:input-url code="company.practicumSession.form.label.link" path="link" readonly="true"/>
+	<acme:input-url code="company.practicumSession.form.label.link" path="link"/>
 	<acme:input-textbox code="company.practicumSession.form.label.practicum" path="practicum" readonly="true"/>
 	<acme:input-checkbox code="company.practicumSession.form.label.published" path="published" readonly="true"/>
 	
