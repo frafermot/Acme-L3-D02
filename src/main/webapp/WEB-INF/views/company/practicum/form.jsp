@@ -5,7 +5,7 @@
 
 <acme:form>
 	<acme:input-textbox code="company.practicum.form.label.code" path="code"/>	
-	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
+	<acme:input-textbox code="company.practicum.form.label.title" path="title"/>
 	<acme:input-textarea code="company.practicum.form.label.practicumAbstract" path="practicumAbstract"/>
 	<acme:input-textarea code="company.practicum.form.label.goals" path="goals"/>
 	<acme:input-textbox code="company.practicum.form.label.estimatedTotalTime" path="estimatedTotalTime" readonly="true"/>

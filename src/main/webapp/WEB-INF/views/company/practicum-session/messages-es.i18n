@@ -4,3 +4,17 @@ company.practicumSession.list.label.periodEnd = Final
 company.practicumSession.list.label.published = Publicado
 
 company.practicumSession.list.button.create = Crear
+
+company.practicumSession.form.label.title = Titulo
+company.practicumSession.form.label.sessionAbstract = Resumen
+company.practicumSession.form.label.periodStart = Inicio del Periodo
+company.practicumSession.form.label.periodEnd = Final del Periodo
+company.practicumSession.form.label.link = Link
+company.practicumSession.form.label.practicum = Practica
+company.practicumSession.form.label.published = Publicado
+
+company.practicumSession.form.button.create = Crear
+company.practicumSession.form.button.session = Sesiones
+company.practicumSession.form.button.update = Actualizar
+company.practicumSession.form.button.delete = Eliminar
+company.practicumSession.form.button.publish = Publicar

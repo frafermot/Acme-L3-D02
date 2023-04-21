@@ -22,4 +22,7 @@ public interface CompanyPracticumSessionRepository extends AbstractRepository {
 
 	@Query("select c from Company c where c.userAccount.id = :id")
 	Company findCompanyByUserId(int id);
+
+	@Query("select ps from PracticumSession ps where ps.id = :id")
+	PracticumSession findSessionById(int id);
 }
