@@ -21,7 +21,11 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("masterId", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
