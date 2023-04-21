@@ -50,9 +50,16 @@ public class CompanyPracticumDeleteService extends AbstractService<Company, Prac
 	public void load() {
 		Practicum object;
 		int id;
+		final double totalTime;
+		final Collection<PracticumSession> sessions;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findPracticumById(id);
+
+		sessions = this.repository.findAllSessionByPracticumId(id);
+		totalTime = sessions.stream().mapToDouble(x -> x.getPeriodEnd().getTime() - x.getPeriodStart().getTime()).sum();
+
+		object.setEstimatedTotalTime(totalTime / (1000 * 60 * 60));
 
 		super.getBuffer().setData(object);
 	}

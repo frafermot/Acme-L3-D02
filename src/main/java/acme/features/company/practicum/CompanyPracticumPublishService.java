@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.practicum.Practicum;
+import acme.entities.practicumSession.PracticumSession;
 import acme.enums.Indication;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -50,9 +51,16 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void load() {
 		Practicum object;
 		int id;
+		final double totalTime;
+		final Collection<PracticumSession> sessions;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findPracticumById(id);
+
+		sessions = this.repository.findAllSessionByPracticumId(id);
+		totalTime = sessions.stream().mapToDouble(x -> x.getPeriodEnd().getTime() - x.getPeriodStart().getTime()).sum();
+
+		object.setEstimatedTotalTime(totalTime / (1000 * 60 * 60));
 
 		super.getBuffer().setData(object);
 	}

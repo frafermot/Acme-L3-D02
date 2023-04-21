@@ -46,6 +46,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		object = new Practicum();
 		object.setPublished(false);
 		object.setCompany(company);
+		object.setEstimatedTotalTime(0.);
 
 		super.getBuffer().setData(object);
 	}
