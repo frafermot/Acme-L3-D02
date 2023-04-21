@@ -2,7 +2,7 @@ assistant.session.list.label.title = Title
 assistant.session.list.label.indication = Indication
 assistant.session.list.label.periodStart = Period Start
 assistant.session.list.label.periodEnd = Period End
-assistant.session.list.label.publish = Publish
+assistant.session.list.label.published = Publish
 assistant.session.list.button.create = Create
 
 assistant.session.form.label.title = Title:

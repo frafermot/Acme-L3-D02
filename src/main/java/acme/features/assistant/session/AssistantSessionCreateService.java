@@ -22,7 +22,7 @@ import acme.roles.Assistant;
 public class AssistantSessionCreateService extends AbstractService<Assistant, Session> {
 
 	public static final String[]			ATTRIBUTES	= {
-		"title", "sessionAbstract", "indication", "periodStart", "periodEnd", "link", "published"
+		"title", "sessionAbstract", "periodStart", "periodEnd", "link", "published"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -74,9 +74,15 @@ public class AssistantSessionCreateService extends AbstractService<Assistant, Se
 
 	@Override
 	public void bind(final Session object) {
+		final Indication indication;
+		String indicationName;
+
 		assert object != null;
 
+		indicationName = super.getRequest().getData("indication", String.class);
+		indication = Indication.valueOf(indicationName);
 		super.bind(object, AssistantSessionCreateService.ATTRIBUTES);
+		object.setIndication(indication);
 	}
 
 	@Override
@@ -118,7 +124,7 @@ public class AssistantSessionCreateService extends AbstractService<Assistant, Se
 
 		tutorialId = super.getRequest().getData("masterId", int.class);
 		tutorial = this.repository.findTutorialById(tutorialId);
-		choices = SelectChoices.from(Indication.class, null);
+		choices = SelectChoices.from(Indication.class, object.getIndication());
 
 		tuple = super.unbind(object, AssistantSessionCreateService.ATTRIBUTES);
 		tuple.put("masterId", tutorialId);
