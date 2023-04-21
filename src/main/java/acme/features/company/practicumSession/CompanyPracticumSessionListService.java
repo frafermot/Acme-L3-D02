@@ -27,13 +27,13 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 	@Override
 	public void authorise() {
 		Practicum object;
-		int id;
+		int masterId;
 		boolean status;
 		Company company;
 
 		company = this.repository.findCompanyByUserId(super.getRequest().getPrincipal().getAccountId());
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findPracticumById(id);
+		masterId = super.getRequest().getData("masterId", int.class);
+		object = this.repository.findPracticumById(masterId);
 		status = object != null && super.getRequest().getPrincipal().hasRole(Company.class) && object.getCompany().getId() == company.getId();
 		super.getResponse().setAuthorised(status);
 	}

@@ -13,14 +13,12 @@
 	<acme:input-select code="company.practicum.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-checkbox code="company.practicum.form.label.published" path="published" readonly="true"/>
 	
-	
-	
 	<jstl:choose>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="company.practicum.form.button.create" action="/company/practicum/create"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
-			<acme:button code="company.practicum.form.button.sessions" action="/company/practicumSession/list?masterId=${id}"/>
+			<acme:button code="company.practicum.form.button.sessions" action="/company/practicum-session/list?masterId=${id}"/>
 			<jstl:if test="${published == false}">
 				<acme:submit code="company.practicum.form.button.update" action="/company/practicum/update"/>
 				<acme:submit code="company.practicum.form.button.delete" action="/company/practicum/delete"/>
